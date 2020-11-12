@@ -2,7 +2,13 @@ import * as React from "react";
 import Lottie from "react-lottie";
 const animationData = require("../../assets/img/Noro-Logo.json");
 
-export const AnimatedLogo = () => {
+interface Props {
+  isBig?: boolean;
+}
+
+
+export const AnimatedLogo: React.FC<Props> = ({ isBig}) => {
+  const size = isBig ? 300 : 40;
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -12,5 +18,5 @@ export const AnimatedLogo = () => {
     },
   };
 
-  return <Lottie options={defaultOptions} height={40} width={40} />;
+  return <Lottie options={defaultOptions} height={size} width={size} />;
 };

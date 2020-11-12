@@ -1,11 +1,13 @@
 import * as React from "react";
 import { Video, VideoControl, VideoWrapper } from "./styled";
 import { getStaticContent } from "../../services/static-file";
+import { Loader } from "../Loader";
 
 const { useRef, useState } = React;
 
 export const MainScreenVideo = () => {
   const [controlsVisible, setControlsVisibility] = useState(true);
+  const [preLoading, setPreLoading] = useState(true);
   const videoElement = useRef<HTMLVideoElement>(null);
 
   const handleVideoControlButtonClick = () => {
@@ -39,17 +41,20 @@ export const MainScreenVideo = () => {
   }, []);
   return (
     <VideoWrapper>
+      <Loader isLoading={preLoading} />
       <VideoControl
         onClick={handleVideoControlButtonClick}
         visible={controlsVisible}
-        src={getStaticContent("2020/10/image.png")}
+        src={getStaticContent("misc/image.png")}
         alt="player-control"
       />
-      <Video onClick={handleVideoClick} muted autoPlay ref={videoElement}>
-        <source
-          src={getStaticContent("2020/10/P1666005_1-2.mp4")}
-          type="video/mp4"
-        />
+      <Video
+        onCanPlay={() => setPreLoading(false)}
+        onClick={handleVideoClick}
+        autoPlay
+        ref={videoElement}
+      >
+        <source src={getStaticContent("MAIN_VIDEO.mp4")} type="video/mp4" />
       </Video>
     </VideoWrapper>
   );

@@ -12,16 +12,21 @@ import {
   LeftArrow,
   RightArrow,
   Lightbulb,
+  LogoWrapper,
 } from "./styled";
 import InnerImageZoom from "react-inner-image-zoom";
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
 import { pairedGallery } from "../../services/gallery";
 import { getStaticContent } from "../../services/static-file";
+import { Logo } from "../../components/Logo";
+
+const MOBILE_BREAKPOINT = 768;
 
 const GalleryItemNotConnected: React.FC<RouteComonentProps<{ id: string }>> = ({
   match,
   history,
 }) => {
+  const [closeButtonVisible, setCloseButtonVisible] = React.useState(true);
   const [isUV, setUV] = React.useState(false);
   const [index, setIndex] = React.useState<number>();
   const [namesArray, setNamesArray] = React.useState<string[]>();
@@ -77,7 +82,13 @@ const GalleryItemNotConnected: React.FC<RouteComonentProps<{ id: string }>> = ({
 
   return (
     <GalleryItemWrapper>
-      <CloseWrapper to={ROUTING[ROUTES.GALLERY].path}>
+      <LogoWrapper>
+        <Logo />
+      </LogoWrapper>
+      <CloseWrapper
+        mobileVisible={closeButtonVisible}
+        to={ROUTING[ROUTES.GALLERY].path}
+      >
         <CloseIcon />
       </CloseWrapper>
       <LeftArrow
@@ -95,9 +106,12 @@ const GalleryItemNotConnected: React.FC<RouteComonentProps<{ id: string }>> = ({
           src={getStaticContent("misc/mask.png")}
         />
       )}
-
       <ZoomInWrapper>
         <InnerImageZoom
+          afterZoomIn={() => setCloseButtonVisible(false)}
+          afterZoomOut={() => setCloseButtonVisible(true)}
+          mobileBreakpoint={MOBILE_BREAKPOINT}
+          fullscreenOnMobile={true}
           className="gallery-image"
           src={getStaticContent(
             `gallery/${currentPainting.file}${isUV ? "UV" : ""}.jpg`,

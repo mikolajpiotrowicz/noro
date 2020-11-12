@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { HamburgerIcon } from "../Icons";
 
 export const HeaderWrapper = styled.div<{ hideBoxShadow: boolean }>`
   display: flex;

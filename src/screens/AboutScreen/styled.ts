@@ -3,18 +3,6 @@ import { RainbowText, Text } from "../../styled/typography";
 
 export const AboutWrapper = styled.div`
   margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-`;
-export const ImagesWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-
-  img {
-    width: 100%;
-    margin-bottom: 50px;
-  }
 `;
 
 export const AboutCharter = styled.p`
@@ -25,9 +13,14 @@ export const AboutCharter = styled.p`
 `;
 
 export const AboutContent = styled.div`
-  width: 58%;
+  width: 100%;
   line-height: 1.61;
   font-size: ${(props) => props.theme.size.h2}px;
+  margin: 20px 0 0 0;
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+    margin: 0;
+    width: 56%;
+  }
 
   ${Text} {
     margin-top: 5px;
@@ -41,8 +34,28 @@ export const AboutContent = styled.div`
     font-size: ${(props) => props.theme.size.h2}px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 0;
+    margin: 0;
     text-align: left;
+  }
+`;
+
+export const AboutRow = styled.div`
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+  flex-direction: column;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+    flex-direction: row;
+  }
+
+  img {
+    width: 100%;
+    margin: 0 60px 0 0;
+
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+      width: 40%;
+    }
   }
 `;
 

@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import {
   DesktopMenu,
   DesktopMenuItem,
-  HeaderWrapper,
   HamburgerWrapper,
-  MobileMenuItem,
+  HeaderWrapper,
   MobileMenu,
-  MobileMenuWrapper, Overlay,
+  MobileMenuItem,
+  MobileMenuWrapper,
+  Overlay,
 } from "./styled";
 import { Logo } from "../Logo";
 import { ROUTES, ROUTING } from "../../services/routing";
@@ -43,39 +44,32 @@ export const Header = () => {
             <Link to={ROUTING[ROUTES.MAIN].path}>home</Link>
           </MobileMenuItem>
           <MobileMenuItem>
-            <Link to="/gallery">gallery</Link>
+            <Link to={ROUTING[ROUTES.GALLERY].path}>gallery</Link>
           </MobileMenuItem>
           <MobileMenuItem>
-            <Link to="/shop">shop</Link>
+            <Link to={ROUTING[ROUTES.SHOP_CATEGORIES].path}>shop</Link>
           </MobileMenuItem>
           <MobileMenuItem>
             <Link to={ROUTING[ROUTES.ABOUT].path}>about</Link>
           </MobileMenuItem>
-          <MobileMenuItem>
-            <Link to="/video">video</Link>
-          </MobileMenuItem>
+
           <MobileMenuItem>
             <Link to={ROUTING[ROUTES.CONTACT].path}>contact</Link>
           </MobileMenuItem>
         </MobileMenu>
-
-
       </MobileMenuWrapper>
       <DesktopMenu>
         <DesktopMenuItem>
           <Link to={ROUTING[ROUTES.MAIN].path}>home</Link>
         </DesktopMenuItem>
         <DesktopMenuItem>
-          <Link to="/gallery">gallery</Link>
+          <Link to={ROUTING[ROUTES.GALLERY].path}>gallery</Link>
         </DesktopMenuItem>
         <DesktopMenuItem>
-          <Link to="/shop">shop</Link>
+          <Link to={ROUTING[ROUTES.SHOP_CATEGORIES].path}>shop</Link>
         </DesktopMenuItem>
         <DesktopMenuItem>
           <Link to={ROUTING[ROUTES.ABOUT].path}>about</Link>
-        </DesktopMenuItem>
-        <DesktopMenuItem>
-          <Link to="/video">video</Link>
         </DesktopMenuItem>
         <DesktopMenuItem>
           <Link to={ROUTING[ROUTES.CONTACT].path}>contact</Link>

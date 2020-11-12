@@ -7,6 +7,7 @@ import { ContactScreen } from "../../screens/ContactScreen";
 import { AboutScreen } from "../../screens/AboutScreen";
 import { GalleryScreen } from "../../screens/GalleryScreen/GalleryScreen";
 import { GalleryItem } from "../../screens/GalleryItem";
+import { ShopCategories } from "../../screens/ShopCategories";
 
 export const Routing = () => {
   return (
@@ -16,6 +17,10 @@ export const Routing = () => {
       <RouteWithLayout component={AboutScreen} path={ROUTING.ABOUT.path} />
       <Route path={ROUTING[ROUTES.GALLERY_ITEM].path} component={GalleryItem} />
       <RouteWithLayout component={GalleryScreen} path={ROUTING.GALLERY.path} />
+      <RouteWithLayout
+        component={ShopCategories}
+        path={ROUTING[ROUTES.SHOP_CATEGORIES].path}
+      />
     </Switch>
   );
 };

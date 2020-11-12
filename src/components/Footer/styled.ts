@@ -13,14 +13,14 @@ export const Links = styled.div`
   margin: 0 0 0 10px;
   max-width: 800px;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
-    margin: 0 auto;
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+    margin: 0 auto 10px auto;
     justify-content: space-between;
     flex-direction: row;
   }
 `;
 
-export const FooterLink = styled(Link)`
+export const FooterLink = styled.a`
   color: ${(props) => props.theme.colors.white};
   font-weight: bold;
   margin-bottom: 3px;
@@ -29,7 +29,7 @@ export const FooterLink = styled(Link)`
 export const Copy = styled.p`
   color: ${(props) => props.theme.colors.white};
   font-weight: 300;
-	font-size: 12px;
+  font-size: 12px;
   width: 100%;
   text-align: center;
   margin-bottom: 0;

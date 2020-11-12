@@ -1,5 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
+
+
 export type Props = React.HTMLAttributes<HTMLOrSVGElement>;
 const HamburgerIconPure: React.FC<Props> = ({ className }) => (
   <svg className={className} viewBox="0 0 24 19" width="24" height="19">

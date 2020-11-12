@@ -13,9 +13,7 @@ export const RouteWithLayout = ({ component: Node, ...rest }) => {
           {console.log({ ...rest }, Node)}
           <Screen>
             <Header />
-            <div className="screen">
-              <Node />
-            </div>
+            <Node />
           </Screen>
           <Footer />
         </>
