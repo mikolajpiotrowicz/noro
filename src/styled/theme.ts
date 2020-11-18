@@ -27,7 +27,7 @@ export const theme: DefaultTheme = {
     mdMobile: 520,
     mobile: 768,
     tablet: 1024,
-    desktop: 1366,
+    desktop: 1440,
     bigDesktop: 1600,
   },
 };

@@ -8,6 +8,7 @@ export enum ROUTES {
   SHOP_ORGINALS = "SHOP_ORGINALS",
   SHOP_PRINTS = "SHOP_PRINTS",
   SHOP_APPAREL = "SHOP_APPAREL",
+  SHOP_ITEM = "SHOP_ITEM",
 }
 
 export const ROUTING = {
@@ -37,5 +38,8 @@ export const ROUTING = {
   },
   [ROUTES.SHOP_PRINTS]: {
     path: "/shop/prints",
+  },
+  [ROUTES.SHOP_ITEM]: {
+    path: "/shop/:id",
   },
 };

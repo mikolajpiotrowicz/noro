@@ -1,10 +1,10 @@
 import * as React from "react";
 import { SectionHeading } from "../../styled/reusable";
-import { Header1 } from "../../styled/typography";
+import { Header1, RainbowText } from "../../styled/typography";
 import { ContactWrapper, ContactInfo } from "./styled";
 import { getStaticContent } from "../../services/static-file";
 
-export const ContactScreen = () => {
+export const ContactScreen: React.FC = () => {
   return (
     <>
       <SectionHeading>
@@ -17,9 +17,7 @@ export const ContactScreen = () => {
         <img src={getStaticContent("misc/me1.jpg")} />
         <ContactInfo>
           For general inquiries / interviews: <br />
-          <b>noroart.contact@gmail.com</b>
-          <br />
-          <br />
+          <RainbowText><b>noroart.contact@gmail.com</b></RainbowText>
           Currently working and living in <br />
           Wrocław, Poland
         </ContactInfo>

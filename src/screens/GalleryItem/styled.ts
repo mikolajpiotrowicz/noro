@@ -1,92 +1,42 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, LinkProps } from "react-router-dom";
 
 export const CloseWrapper = styled(Link)`
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 5px;
+  right: 13px;
   z-index: 5;
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}px) {
-    ${(props) => props.asd && "mobileVisible: none;"}
-  }
+
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     right: 75px;
     top: 80px;
   }
-`;
 
-export const ZoomInWrapper = styled.div`
-  position: fixed;
-  transform: translate(0, -50%);
-  top: 50%;
-  left: 60px;
-  right: 40px;
+  svg {
+    width: 25px;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
-    left: 120px;
-  }
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop}px) {
-    left: 200px;
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+      width: 40px;
+    }
   }
 `;
 
 export const GalleryItemWrapper = styled.div`
   position: relative;
   user-select: none;
-  .gallery-image {
-    width: calc(100% - 20px);
-
-    @media (min-width: ${(props) => props.theme.breakpoints.mdMobile}px) {
-      width: 280px;
-    }
-    @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
-      width: 370px;
-    }
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
-      width: 420px;
-    }
-    @media (min-width: ${(props) => props.theme.breakpoints.desktop}px) {
-      width: 600px;
-    }
-  }
+  user-select: none;
 `;
 export const LogoWrapper = styled.div`
-  position: fixed;
-  top: 100px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     top: 50px;
     display: none;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}px) {
     top: 30px;
-  }
-`;
-
-export const PaintingData = styled.div`
-  position: fixed;
-  left: 60px;
-  transform: translate(0, 0%);
-  bottom: 20px;
-
-  @media (min-width: ${(props) => props.theme.breakpoints.mdMobile}px) {
-    top: 50%;
-    bottom: unset;
-    left: 57%;
-    transform: translate(0, -50%);
-  }
-
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
-    top: 50%;
-    bottom: unset;
-    left: 58%;
-  }
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
-    top: 50%;
-    bottom: unset;
-    left: 55%;
   }
 `;
 
@@ -105,22 +55,24 @@ export const PaintingDataRow = styled.p`
   color: ${(props) => props.theme.colors.gray1};
 `;
 export const LeftArrow = styled.img`
-  position: fixed;
   left: 5px;
   transform: translate(0, -50%) rotate(180deg);
   top: 50%;
   cursor: pointer;
   user-select: none;
+  display: none;
   z-index: 10;
   @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     left: 15px;
+    position: fixed;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     left: 55px;
   }
 `;
 export const RightArrow = styled.img`
-  position: fixed;
+  display: none;
+
   right: 10px;
   transform: translate(0, -50%);
   top: 50%;
@@ -130,17 +82,80 @@ export const RightArrow = styled.img`
 
   @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     right: 15px;
+    position: fixed;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     right: 55px;
   }
 `;
+
+export const PaintingData = styled.div`
+  margin: 0 60px;
+  position: relative;
+
+  ${LeftArrow}, ${RightArrow} {
+    position: absolute;
+    display:block;
+    width: 20px;
+  }
+
+  ${LeftArrow} {
+    left: -40px;
+  }
+
+  ${RightArrow} {
+    right: -40px;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+    position: fixed;
+    top: 50%;
+    bottom: unset;
+    left: 58%;
+
+    ${LeftArrow}, ${RightArrow} {
+      display: none;
+    }
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+    top: 50%;
+    bottom: unset;
+    left: 55%;
+  }
+`;
+
+export const ZoomInWrapper = styled.div`
+  position: unset;
+  display: flex;
+  margin-top: 50px;
+  width: 100vw;
+
+  ${LeftArrow}, ${RightArrow} {
+    display: none;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+    width: unset;
+    max-width: 670px;
+    position: fixed;
+    transform: translate(0, -50%);
+    top: 50%;
+    right: 40px;
+    left: 120px;
+    ${LeftArrow}, ${RightArrow} {
+      display: block;
+    }
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.desktop}px) {
+    left: 200px;
+  }
+`;
 export const Lightbulb = styled.img<{ isUv: boolean }>`
   position: fixed;
 
-  top: 13px;
-  right: 77px;
-  width: 50px;
+  top: 9px;
+  right: 50px;
+  width: 30px;
   z-index: 5;
 
   background: ${(props) =>

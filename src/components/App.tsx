@@ -4,16 +4,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./../assets/scss/App.scss";
 import { Routing } from "./Routing";
 import { ThemeProvider } from "styled-components";
-import { createBrowserHistory } from "history";
 import { theme } from "../styled/theme";
 import "react-slideshow-image/dist/styles.css";
+import "../services/i18n";
 
-export const history = createBrowserHistory();
 class App extends React.Component<Record<string, unknown>, undefined> {
   public render() {
     return (
       <ThemeProvider theme={theme}>
-        <Router history={history}>
+        <Router>
           <Routing />
         </Router>
       </ThemeProvider>

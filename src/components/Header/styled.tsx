@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderWrapper = styled.div<{ hideBoxShadow: boolean }>`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: fixed;
   width: 100%;
   top: 0;
@@ -17,6 +17,7 @@ export const HeaderWrapper = styled.div<{ hideBoxShadow: boolean }>`
   transition: box-shadow 0.3s ease-in-out;
 
   @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+    justify-content: center;
     position: unset;
     box-shadow: none;
   }
@@ -26,18 +27,19 @@ export const DesktopMenu = styled.ul`
   display: none;
   list-style: none;
   margin-top: 20px;
-  
+  margin-left: 125px;
   @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
 		display: flex;
   }
 }
 `;
-export const DesktopMenuItem = styled.li`
+export const DesktopMenuItem = styled.li<{ isActive?: boolean }>`
   text-transform: uppercase;
-  margin-right: 20px;
+  margin-right: 40px;
   cursor: pointer;
   font-weight: bold;
 
+  ${(props) => props.isActive && `a { color: ${props.theme.colors.gray2}; }`}
   &:hover {
     font-weight: 900;
   }
@@ -72,15 +74,20 @@ export const MobileMenu = styled.div`
   align-items: center;
   height: 100vh;
 `;
-export const MobileMenuItem = styled.div`
+export const MobileMenuItem = styled.div<{ isActive?: boolean }>`
   padding: 20px 0;
   width: 100%;
   text-align: center;
   text-transform: uppercase;
   font-size: 24px;
+
+  background-color: ${(props) =>
+    props.isActive ? props.theme.colors.gray4 : "transparent"};
   &:hover,
   &:focus {
-    background-color: ${(props) => props.theme.colors.gray4};
+    &:not(&:last-of-type) {
+      background-color: ${(props) => props.theme.colors.gray4};
+    }
   }
 `;
 
@@ -95,4 +102,15 @@ export const Overlay = styled.div<{ isOpen: boolean }>`
   opacity: ${(props) => (props.isOpen ? "100" : "0")};
   transition: 0.3s opacity linear;
   display: ${(props) => (props.isOpen ? "block" : "none")};
+`;
+export const LanguageToggle = styled.button<{ isActive: boolean }>`
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  ${(props) => props.isActive && "font-weight: 700;"}
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
 `;

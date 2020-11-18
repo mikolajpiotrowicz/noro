@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Video, VideoControl, VideoWrapper } from "./styled";
 import { getStaticContent } from "../../services/static-file";
-import { Loader } from "../Loader";
+import { FullScreenLoader } from "../FullScreenLoader";
 
 const { useRef, useState } = React;
 
@@ -41,7 +41,7 @@ export const MainScreenVideo = () => {
   }, []);
   return (
     <VideoWrapper>
-      <Loader isLoading={preLoading} />
+      <FullScreenLoader isLoading={preLoading} />
       <VideoControl
         onClick={handleVideoControlButtonClick}
         visible={controlsVisible}
@@ -49,6 +49,7 @@ export const MainScreenVideo = () => {
         alt="player-control"
       />
       <Video
+        muted
         onCanPlay={() => setPreLoading(false)}
         onClick={handleVideoClick}
         autoPlay

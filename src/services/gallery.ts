@@ -51,7 +51,7 @@ export const galleryPaintingsData = [
     size: "120 x 100 cm",
     year: "2019",
     price: "FOR SALE",
-    file: "4-Haê-macz-ys-de-fysz",
+    file: "4-Hae-macz-ys-de-fysz",
     uv: true,
   },
   {
