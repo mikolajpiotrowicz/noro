@@ -14,6 +14,10 @@ export const ProductPrice = styled.h3`
 export const ProductImage = styled.div`
   width: 480px;
   margin-right: 64px;
+  
+  .gallery-image {
+    width: 480px;
+  }
 `;
 
 export const BuyButton = styled.button`
@@ -81,3 +85,6 @@ export const Lightbulb = styled.img<{ isUv: boolean }>`
     right: 150px;
   }
 `;
+
+export const ProductVariants = styled.select``;
+export const ProductVariant = styled.option``;

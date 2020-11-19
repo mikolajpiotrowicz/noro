@@ -7,6 +7,13 @@ import { getProducts } from "../../services/api/client";
 import { ShopLinkItem } from "../../components/ShopLinkItem";
 import { categoriesData } from "../../services/shop";
 import { Loader } from "../../components/Loader";
+import { ROUTES, ROUTING } from "../../services/routing";
+
+const spaPathToCategory = {
+  [ROUTING[ROUTES.SHOP_ORGINALS].path]: "16",
+  [ROUTING[ROUTES.SHOP_PRINTS].path]: "17",
+  [ROUTING[ROUTES.SHOP_APPAREL].path]: "18",
+};
 
 const ShopCategoryNotConnected: React.FC<RouteComponentProps> = ({
   location,
@@ -20,7 +27,9 @@ const ShopCategoryNotConnected: React.FC<RouteComponentProps> = ({
 
   const fetchProducts = React.useCallback(async () => {
     setLoading(true);
-    setProducts(await getProducts({}));
+    setProducts(
+      await getProducts({ category: spaPathToCategory[location.pathname] }),
+    );
     setLoading(false);
   }, []);
 

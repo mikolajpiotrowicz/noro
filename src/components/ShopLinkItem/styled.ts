@@ -7,18 +7,23 @@ export const ShopLinkItemWrapper = styled(Link)`
   width: 100%;
   margin-right: 32px;
 
+  &:nth-of-type(3) {
+    margin-right: 0px;
+  }
+
   @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     width: calc(50% - 5px);
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
-    width: calc(33% - 16px);
+    width: calc(33% - 18px);
+    box-sizing: border-box;
   }
 `;
 export const ShopLinkItemImage = styled.img`
   width: 100%;
   margin-bottom: 40px;
-  max-height: 450px;
+  max-height: 427px;
   object-fit: cover;
 `;
 export const ShopLinkItemProp = styled.p`

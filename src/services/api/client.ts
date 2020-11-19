@@ -6,7 +6,19 @@ const api = new WooCommerceRestApi({
   consumerSecret: "cs_de96e46018c164f8fc5b98ca96b59903ca1e97e7",
   version: "wc/v3",
 });
+export const getProductVariations = async (id: number) => {
+  try {
+    const response = await api.get(`products/${id}/variations`, {
+      per_page: 20,
+    });
 
+    return response.data;
+  } catch (error) {
+    console.error("API ERROR");
+    console.log(error.response);
+    return [];
+  }
+};
 export const getProducts = async (filters) => {
   try {
     const response = await api.get("products", {
