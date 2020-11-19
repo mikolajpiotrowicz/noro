@@ -1,8 +1,9 @@
 import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
+
 const api = new WooCommerceRestApi({
-  url: "http://localhost",
-  consumerKey: "ck_c9095b7eab7dcc69e069bb6abc9e1c9e714997ba",
-  consumerSecret: "cs_948e892b3895deb6b9c0583a57ab8c53d9ad7e08",
+  url: "http://serwer72845.lh.pl/",
+  consumerKey: "ck_520cf0d836a070b6b9bd0be1acd554333dcd2914",
+  consumerSecret: "cs_de96e46018c164f8fc5b98ca96b59903ca1e97e7",
   version: "wc/v3",
 });
 

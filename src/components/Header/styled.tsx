@@ -103,14 +103,4 @@ export const Overlay = styled.div<{ isOpen: boolean }>`
   transition: 0.3s opacity linear;
   display: ${(props) => (props.isOpen ? "block" : "none")};
 `;
-export const LanguageToggle = styled.button<{ isActive: boolean }>`
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  ${(props) => props.isActive && "font-weight: 700;"}
 
-  &:focus {
-    border: none;
-    outline: none;
-  }
-`;

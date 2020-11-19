@@ -1,12 +1,22 @@
 import * as React from "react";
-import { ProductPageWrapper } from "./styled";
+import {
+  ProductInfo,
+  ProductPageWrapper,
+  ProductDataWrap,
+  ProductImage,
+  BuyButton,
+  ProductPrice,
+  ProductName,
+  Lightbulb,
+} from "./styled";
 import { SectionHeading } from "../../styled/reusable";
 import { Header1 } from "../../styled/typography";
-import { categoriesData } from "../../services/shop";
-import { RouteComponentProps } from "react-router";
+import { RouteComponentProps, withRouter } from "react-router";
 import { Product } from "../../models/WooComerce";
-
-export const ProductPage: React.FC<RouteComponentProps<
+import InnerImageZoom from "react-inner-image-zoom";
+import { theme } from "../../styled/theme";
+import { getStaticContent } from "../../services/static-file";
+const ProductPageNotConnected: React.FC<RouteComponentProps<
   null,
   null,
   { product: Product }
@@ -19,16 +29,42 @@ export const ProductPage: React.FC<RouteComponentProps<
   }, []);
 
   const product = getProduct();
-
+  console.log(product);
   if (!product) {
     <div>not found</div>;
   }
   return (
     <ProductPageWrapper>
       <SectionHeading>
-        <Header1>{categoriesData[product.categories[0].id].title}</Header1>
+        <Header1>Original Artwork</Header1>
       </SectionHeading>
-      product!
+      <ProductDataWrap>
+        <ProductImage>
+          <InnerImageZoom
+            mobileBreakpoint={theme.breakpoints.mobile}
+            fullscreenOnMobile={true}
+            className="gallery-image"
+            src={product.images[0].src}
+            zoomSrc={product.images[0].src}
+          />
+        </ProductImage>
+        <ProductInfo>
+          <ProductName>
+            {product.name}
+            <Lightbulb
+              isUv={true}
+              onClick={() => null}
+              src={getStaticContent("misc/mask.png")}
+            />
+          </ProductName>
+          <div
+            dangerouslySetInnerHTML={{ __html: product.short_description }}
+          />
+          <ProductPrice>Price: {product.price}zł</ProductPrice>
+          <BuyButton>add to cart</BuyButton>
+        </ProductInfo>
+      </ProductDataWrap>
     </ProductPageWrapper>
   );
 };
+export const ProductPage = withRouter(ProductPageNotConnected);

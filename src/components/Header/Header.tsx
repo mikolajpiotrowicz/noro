@@ -9,20 +9,21 @@ import {
   MobileMenuItem,
   MobileMenuWrapper,
   Overlay,
-  LanguageToggle,
 } from "./styled";
 import { Logo } from "../Logo";
 import { ROUTES, ROUTING } from "../../services/routing";
 import useScrollPosition from "@react-hook/window-scroll";
 import { useTranslation } from "react-i18next";
+import { LanguageSwitch } from "../LanguageSwitch/LanguageSwitch";
 
 export const HeaderNotConnected: React.FC<RouteComponentProps> = ({
   location,
 }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [mobileMenuIsOpen, openMenu] = React.useState(false);
   const scrollY = useScrollPosition(60 /*fps*/);
   const { pathname } = location;
+
   const handleHamburgerClick = () => {
     openMenu(!mobileMenuIsOpen);
   };
@@ -37,100 +38,60 @@ export const HeaderNotConnected: React.FC<RouteComponentProps> = ({
           className={mobileMenuIsOpen && "active"}
           title="Menu"
         >
-          <span className="line line-1"></span>
-          <span className="line line-2"></span>
-          <span className="line line-3"></span>
+          <span className="line line-1" />
+          <span className="line line-2" />
+          <span className="line line-3" />
         </a>
       </HamburgerWrapper>
       <Overlay isOpen={mobileMenuIsOpen} />
       <MobileMenuWrapper isOpen={mobileMenuIsOpen}>
         <MobileMenu>
-          <MobileMenuItem
-            isActive={location.pathname === ROUTING[ROUTES.MAIN].path}
-          >
+          <MobileMenuItem isActive={pathname === ROUTING[ROUTES.MAIN].path}>
             <Link to={ROUTING[ROUTES.MAIN].path}>{t("header.home")}</Link>
           </MobileMenuItem>
-          <MobileMenuItem
-            isActive={location.pathname === ROUTING[ROUTES.GALLERY].path}
-          >
+          <MobileMenuItem isActive={pathname === ROUTING[ROUTES.GALLERY].path}>
             <Link to={ROUTING[ROUTES.GALLERY].path}>{t("header.gallery")}</Link>
           </MobileMenuItem>
           <MobileMenuItem
-            isActive={
-              location.pathname === ROUTING[ROUTES.SHOP_CATEGORIES].path
-            }
+            isActive={pathname === ROUTING[ROUTES.SHOP_CATEGORIES].path}
           >
             <Link to={ROUTING[ROUTES.SHOP_CATEGORIES].path}>
               {t("header.shop")}
             </Link>
           </MobileMenuItem>
-          <MobileMenuItem
-            isActive={location.pathname === ROUTING[ROUTES.ABOUT].path}
-          >
+          <MobileMenuItem isActive={pathname === ROUTING[ROUTES.ABOUT].path}>
             <Link to={ROUTING[ROUTES.ABOUT].path}>{t("header.about")}</Link>
           </MobileMenuItem>
-          <MobileMenuItem
-            isActive={location.pathname === ROUTING[ROUTES.CONTACT].path}
-          >
+          <MobileMenuItem isActive={pathname === ROUTING[ROUTES.CONTACT].path}>
             <Link to={ROUTING[ROUTES.CONTACT].path}>{t("header.contact")}</Link>
           </MobileMenuItem>
           <MobileMenuItem>
-            <LanguageToggle
-              isActive={i18n.language === "pl"}
-              onClick={() => i18n.changeLanguage("pl")}
-            >
-              PL
-            </LanguageToggle>
-            <LanguageToggle
-              isActive={i18n.language === "en"}
-              onClick={() => i18n.changeLanguage("en")}
-            >
-              EN
-            </LanguageToggle>
+            <LanguageSwitch />
           </MobileMenuItem>
         </MobileMenu>
       </MobileMenuWrapper>
       <DesktopMenu>
-        <DesktopMenuItem
-          isActive={location.pathname === ROUTING[ROUTES.MAIN].path}
-        >
+        <DesktopMenuItem isActive={pathname === ROUTING[ROUTES.MAIN].path}>
           <Link to={ROUTING[ROUTES.MAIN].path}>{t("header.home")}</Link>
         </DesktopMenuItem>
-        <DesktopMenuItem
-          isActive={location.pathname === ROUTING[ROUTES.GALLERY].path}
-        >
+        <DesktopMenuItem isActive={pathname === ROUTING[ROUTES.GALLERY].path}>
           <Link to={ROUTING[ROUTES.GALLERY].path}>{t("header.gallery")}</Link>
         </DesktopMenuItem>
         <DesktopMenuItem
-          isActive={location.pathname === ROUTING[ROUTES.SHOP_CATEGORIES].path}
+          isActive={pathname === ROUTING[ROUTES.SHOP_CATEGORIES].path}
         >
           <Link to={ROUTING[ROUTES.SHOP_CATEGORIES].path}>
             {t("header.shop")}
           </Link>
         </DesktopMenuItem>
-        <DesktopMenuItem
-          isActive={location.pathname === ROUTING[ROUTES.ABOUT].path}
-        >
+        <DesktopMenuItem isActive={pathname === ROUTING[ROUTES.ABOUT].path}>
           <Link to={ROUTING[ROUTES.ABOUT].path}>{t("header.about")}</Link>
         </DesktopMenuItem>
-        <DesktopMenuItem
-          isActive={location.pathname === ROUTING[ROUTES.CONTACT].path}
-        >
+        <DesktopMenuItem isActive={pathname === ROUTING[ROUTES.CONTACT].path}>
           <Link to={ROUTING[ROUTES.CONTACT].path}>{t("header.contact")}</Link>
         </DesktopMenuItem>
         <DesktopMenuItem>
-          <LanguageToggle
-            isActive={i18n.language === "pl"}
-            onClick={() => i18n.changeLanguage("pl")}
-          >
-            PL
-          </LanguageToggle>
-          <LanguageToggle
-            isActive={i18n.language === "en"}
-            onClick={() => i18n.changeLanguage("en")}
-          >
-            EN
-          </LanguageToggle>
+          <LanguageSwitch />
         </DesktopMenuItem>
       </DesktopMenu>
     </HeaderWrapper>

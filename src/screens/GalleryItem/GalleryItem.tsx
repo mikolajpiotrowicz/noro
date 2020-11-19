@@ -19,8 +19,9 @@ import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
 import { pairedGallery } from "../../services/gallery";
 import { getStaticContent } from "../../services/static-file";
 import { Logo } from "../../components/Logo";
+import { theme } from "../../styled/theme";
 
-const MOBILE_BREAKPOINT = 768;
+
 
 interface State {
   isUv: boolean;
@@ -56,7 +57,7 @@ export class GalleryItemNotConnected extends React.Component<
   public handleKeyPress = (e: KeyboardEvent): void => {
     if (e.key === "ArrowRight") this.getNextItem();
     if (e.key === "ArrowLeft") this.getPreviousItem();
-  }
+  };
 
   public getNextItem = (): void => {
     const { index, namesArray } = this.state;
@@ -119,7 +120,7 @@ export class GalleryItemNotConnected extends React.Component<
             src={getStaticContent("misc/mask.png")}
           />
         )}
-  
+
         <LeftArrow
           onClick={this.getPreviousItem}
           src={getStaticContent("misc/gallery-arrow.png")}
@@ -129,11 +130,10 @@ export class GalleryItemNotConnected extends React.Component<
           src={getStaticContent("misc/gallery-arrow.png")}
         />
         <ZoomInWrapper>
-
           <InnerImageZoom
             afterZoomIn={() => this.setState({ closeButtonVisible: false })}
             afterZoomOut={() => this.setState({ closeButtonVisible: true })}
-            mobileBreakpoint={MOBILE_BREAKPOINT}
+            mobileBreakpoint={theme.breakpoints.mobile}
             fullscreenOnMobile={true}
             className="gallery-image"
             src={getStaticContent(
@@ -150,8 +150,7 @@ export class GalleryItemNotConnected extends React.Component<
           <PaintingDataRow>{currentPainting.year}</PaintingDataRow>
           <PaintingDataRow>{currentPainting.technique}</PaintingDataRow>
           <PaintingDataRow>{currentPainting.price || ""}</PaintingDataRow>
-  
-  
+
           <LeftArrow
             onClick={this.getPreviousItem}
             src={getStaticContent("misc/gallery-arrow.png")}

@@ -1,6 +1,11 @@
-import { DefaultTheme } from "styled-components";
-
-export const theme: DefaultTheme = {
+export interface Theme {
+  colors: any;
+  boxShadows: any;
+  fontWeights: any;
+  breakpoints: any;
+  size: any;
+}
+export const theme: Theme = {
   colors: {
     black: "#000",
     gray1: "#707070",
@@ -8,6 +13,8 @@ export const theme: DefaultTheme = {
     gray3: "#c0c0c0",
     gray4: "#f3f3f3",
     white: "#fff",
+    gradient1: "#43F0DF",
+    gradient2: "#F61A1A",
   },
   boxShadows: {
     smallShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.04)",
@@ -16,6 +23,7 @@ export const theme: DefaultTheme = {
     h1: 32,
     h2: 24,
     h3: 16,
+    small: 12,
   },
   fontWeights: {
     light: 400,

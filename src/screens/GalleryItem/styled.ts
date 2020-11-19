@@ -64,6 +64,7 @@ export const LeftArrow = styled.img`
   z-index: 10;
   @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     left: 15px;
+    display: block;
     position: fixed;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
@@ -82,6 +83,7 @@ export const RightArrow = styled.img`
 
   @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     right: 15px;
+    display: block;
     position: fixed;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
@@ -90,12 +92,12 @@ export const RightArrow = styled.img`
 `;
 
 export const PaintingData = styled.div`
-  margin: 0 60px;
+  margin: 20px 60px 0 60px;
   position: relative;
 
   ${LeftArrow}, ${RightArrow} {
     position: absolute;
-    display:block;
+    display: block;
     width: 20px;
   }
 
@@ -157,6 +159,7 @@ export const Lightbulb = styled.img<{ isUv: boolean }>`
   right: 50px;
   width: 30px;
   z-index: 5;
+
 
   background: ${(props) =>
     props.isUv

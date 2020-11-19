@@ -26,6 +26,6 @@ export const CategoryImage = styled.img`
   object-position: 50% 50%;
 `;
 export const CategoryTitle = styled.h3`
-  margin-top: 50px;
+  margin-top: 40px;
   text-align: center;
 `;
