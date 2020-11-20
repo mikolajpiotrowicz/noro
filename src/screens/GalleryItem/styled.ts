@@ -149,6 +149,7 @@ export const Lightbulb = styled.img<{ isUv: boolean }>`
   right: 50px;
   width: 30px;
   z-index: 5;
+  cursor: pointer;
 
   background: ${(props) =>
     props.isUv
@@ -180,7 +181,6 @@ export const Lightbulb = styled.img<{ isUv: boolean }>`
       
       `};
   background-size: 300% 300%;
-
   animation: rainbow 1s ease infinite, pulse 3s ease infinite;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
@@ -207,7 +207,6 @@ export const PaintingTitle = styled.h1`
     display: block;
     top: unset;
     margin-left: 20px;
-    animation: rainbow 1s ease infinite;
 
     @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
       display: none;

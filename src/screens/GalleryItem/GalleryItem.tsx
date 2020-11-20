@@ -21,8 +21,6 @@ import { getStaticContent } from "../../services/static-file";
 import { Logo } from "../../components/Logo";
 import { theme } from "../../styled/theme";
 
-
-
 interface State {
   isUv: boolean;
   closeButtonVisible: boolean;
@@ -145,11 +143,14 @@ export class GalleryItemNotConnected extends React.Component<
           />
         </ZoomInWrapper>
         <PaintingData>
-          <PaintingTitle>{currentPainting.name} <Lightbulb
-            isUv={isUv}
-            onClick={() => this.setState({ isUv: !isUv })}
-            src={getStaticContent("misc/bulb-mask.png")}
-          /></PaintingTitle>
+          <PaintingTitle>
+            {currentPainting.name}{" "}
+            <Lightbulb
+              isUv={isUv}
+              onClick={() => this.setState({ isUv: !isUv })}
+              src={getStaticContent("misc/bulb-mask.png")}
+            />
+          </PaintingTitle>
           <PaintingDataRow>{currentPainting.size}</PaintingDataRow>
           <PaintingDataRow>{currentPainting.year}</PaintingDataRow>
           <PaintingDataRow>{currentPainting.technique}</PaintingDataRow>

@@ -48,18 +48,18 @@ a {
 }
 @keyframes pulse {
   from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 
   50% {
-    -webkit-transform: scale3d(1.08, 1.08, 1.08);
-    transform: scale3d(1.08, 1.08, 1.08);
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
   }
 
   to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 
