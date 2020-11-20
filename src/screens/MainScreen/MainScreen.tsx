@@ -6,8 +6,10 @@ import { ImageOverlay, SingleGalleryWrap, Slide, SlidersWrap } from "./styled";
 import { Fade } from "react-slideshow-image";
 import { getStaticContent } from "../../services/static-file";
 import { ROUTES, ROUTING } from "../../services/routing";
+import { useTranslation } from "react-i18next";
 
 export const MainScreen = () => {
+  const { t } = useTranslation();
   const firstSlider = [
     "small-pics/17-bozenka.jpg",
     "small-pics/11-GENDER.jpg",
@@ -23,12 +25,12 @@ export const MainScreen = () => {
   return (
     <div>
       <SectionHeading>
-        <Header1>Polish Contemporary Artist</Header1>
+        <Header1>{t("pageHeading.home")}</Header1>
       </SectionHeading>
       <MainScreenVideo />
       <SlidersWrap>
         <SingleGalleryWrap to={ROUTING[ROUTES.GALLERY].path}>
-          <Header1>GALLERY.</Header1>
+          <Header1>{t("header.gallery")}.</Header1>
           <Fade duration={2500} arrows={false}>
             {firstSlider.map((image) => {
               return (
@@ -41,7 +43,7 @@ export const MainScreen = () => {
           </Fade>
         </SingleGalleryWrap>
         <SingleGalleryWrap to={ROUTING[ROUTES.SHOP_CATEGORIES].path}>
-          <Header1>SHOP.</Header1>
+          <Header1>{t("header.shop")}.</Header1>
           <Fade duration={4000} arrows={false}>
             {secondSlider.map((image) => {
               return (

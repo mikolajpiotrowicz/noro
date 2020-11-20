@@ -39,8 +39,10 @@ export const SingleGalleryWrap = styled(Link)`
   img:hover {
     transform: scale(1.11);
   }
-  
 
+  ${Header1} {
+    text-transform: uppercase;
+  }
 `;
 
 export const SlidersWrap = styled.div`

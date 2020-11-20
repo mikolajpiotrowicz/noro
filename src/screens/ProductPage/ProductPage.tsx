@@ -19,11 +19,13 @@ import InnerImageZoom from "react-inner-image-zoom";
 import { theme } from "../../styled/theme";
 import { getStaticContent } from "../../services/static-file";
 import { getProductVariations } from "../../services/api/client";
+import { useTranslation } from 'react-i18next';
 const ProductPageNotConnected: React.FC<RouteComponentProps<
   null,
   null,
   { product: Product }
 >> = ({ location }) => {
+  const { t } = useTranslation();
   const [variants, setVariants] = React.useState<Product[]>([]);
   const getProduct = React.useCallback(() => {
     if (location.state && location.state.product) {
@@ -72,8 +74,8 @@ const ProductPageNotConnected: React.FC<RouteComponentProps<
           <div
             dangerouslySetInnerHTML={{ __html: product.short_description }}
           />
-          <ProductPrice>Price: {product.price}zł</ProductPrice>
-          <BuyButton>add to cart</BuyButton>
+          <ProductPrice>{t('shop.price')}: {product.price}zł</ProductPrice>
+          <BuyButton>{t('shop.buyNow')}</BuyButton>
         </ProductInfo>
       </ProductDataWrap>
     </ProductPageWrapper>

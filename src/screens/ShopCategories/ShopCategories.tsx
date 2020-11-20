@@ -10,25 +10,23 @@ import {
 } from "./styled";
 import { getStaticContent } from "../../services/static-file";
 import { ROUTES, ROUTING } from "../../services/routing";
+import { useTranslation } from "react-i18next";
 
 export const ShopCategories = () => {
+  const { t } = useTranslation();
   return (
     <ShopCategoriesWrapper>
       <SectionHeading>
-        <Header1>Limited Prints & Exclusive Collectibles</Header1>
+        <Header1>{t("pageHeading.shop")}</Header1>
       </SectionHeading>
       <Categories>
         <Category to={ROUTING[ROUTES.SHOP_ORGINALS].path}>
           <CategoryImage src={getStaticContent("small-pics/17-bozenka.jpg")} />
-          <CategoryTitle>FEATURED ORIGINAL WORKS</CategoryTitle>
+          <CategoryTitle>{t("shop.categoryOriginal")}</CategoryTitle>
         </Category>
         <Category to={ROUTING[ROUTES.SHOP_PRINTS].path}>
           <CategoryImage src={getStaticContent("small-pics/25-pansia.jpg")} />
-          <CategoryTitle>FINE ART CANVAS PRINTS</CategoryTitle>
-        </Category>
-        <Category to={ROUTING[ROUTES.SHOP_APPAREL].path}>
-          <CategoryImage src={getStaticContent("small-pics/mingx.jpg")} />
-          <CategoryTitle>APPAREL</CategoryTitle>
+          <CategoryTitle>{t("shop.categoryPrints")}</CategoryTitle>
         </Category>
       </Categories>
     </ShopCategoriesWrapper>

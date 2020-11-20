@@ -117,7 +117,7 @@ export class GalleryItemNotConnected extends React.Component<
           <Lightbulb
             isUv={isUv}
             onClick={() => this.setState({ isUv: !isUv })}
-            src={getStaticContent("misc/mask.png")}
+            src={getStaticContent("misc/bulb-mask.png")}
           />
         )}
 
@@ -145,7 +145,11 @@ export class GalleryItemNotConnected extends React.Component<
           />
         </ZoomInWrapper>
         <PaintingData>
-          <PaintingTitle>{currentPainting.name}</PaintingTitle>
+          <PaintingTitle>{currentPainting.name} <Lightbulb
+            isUv={isUv}
+            onClick={() => this.setState({ isUv: !isUv })}
+            src={getStaticContent("misc/bulb-mask.png")}
+          /></PaintingTitle>
           <PaintingDataRow>{currentPainting.size}</PaintingDataRow>
           <PaintingDataRow>{currentPainting.year}</PaintingDataRow>
           <PaintingDataRow>{currentPainting.technique}</PaintingDataRow>

@@ -3,23 +3,28 @@ import { SectionHeading } from "../../styled/reusable";
 import { Header1, RainbowText } from "../../styled/typography";
 import { ContactWrapper, ContactInfo } from "./styled";
 import { getStaticContent } from "../../services/static-file";
+import { useTranslation } from "react-i18next";
 
 export const ContactScreen: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <>
       <SectionHeading>
         <Header1>
-          Have Something in Mind? <br />
-          Don’t Hesitate to Get in Touch.
+          {t("pageHeading.contactR1")}
+          <br />
+          {t("pageHeading.contactR2")}
         </Header1>
       </SectionHeading>
       <ContactWrapper>
         <img src={getStaticContent("misc/me1.jpg")} />
         <ContactInfo>
-          For general inquiries / interviews: <br />
-          <RainbowText><b>noroart.contact@gmail.com</b></RainbowText>
-          Currently working and living in <br />
-          Wrocław, Poland
+          {t("contactPage.row1")}
+          <br />
+          <RainbowText>
+            <b>noroart.contact@gmail.com</b>
+          </RainbowText>
+          {t("contactPage.row2")}
         </ContactInfo>
       </ContactWrapper>
     </>

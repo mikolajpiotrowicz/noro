@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const ShopCategoriesWrapper = styled.div``;
 export const Categories = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 50px;
   flex-wrap: wrap;
 `;

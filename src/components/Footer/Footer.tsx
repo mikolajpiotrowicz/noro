@@ -11,7 +11,7 @@ export const Footer = () => {
         <FooterLink>TikTok</FooterLink>
         <FooterLink>Pintrest</FooterLink>
       </Links>
-      <Copy>©NORO ART. All Rights Reserved</Copy>
+      <Copy>2020©NORO ART. All Rights Reserved</Copy>
     </FooterWrapper>
   );
 };

@@ -40,16 +40,6 @@ export const LogoWrapper = styled.div`
   }
 `;
 
-export const PaintingTitle = styled.h1`
-  color: ${(props) => props.theme.colors.gray1};
-  margin: 5px 0 10px 0;
-  font-size: 24px;
-
-  @media (min-width: ${(props) => props.theme.breakpoints.mdMobile}px) {
-    font-size: 32px;
-  }
-`;
-
 export const PaintingDataRow = styled.p`
   margin: 5px 0 5px 0;
   color: ${(props) => props.theme.colors.gray1};
@@ -154,12 +144,11 @@ export const ZoomInWrapper = styled.div`
 `;
 export const Lightbulb = styled.img<{ isUv: boolean }>`
   position: fixed;
-
+  display: none;
   top: 9px;
   right: 50px;
   width: 30px;
   z-index: 5;
-
 
   background: ${(props) =>
     props.isUv
@@ -192,13 +181,36 @@ export const Lightbulb = styled.img<{ isUv: boolean }>`
       `};
   background-size: 300% 300%;
 
-  -webkit-animation: rainbow 3s ease infinite;
-  -z-animation: rainbow 3s ease infinite;
-  -o-animation: rainbow 3s ease infinite;
-  animation: rainbow 3s ease infinite;
+  animation: rainbow 1s ease infinite, pulse 3s ease infinite;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
-    top: 72px;
-    right: 150px;
+    top: 77px;
+    right: 160px;
+    display: block;
+  }
+`;
+export const PaintingTitle = styled.h1`
+  color: ${(props) => props.theme.colors.gray1};
+  margin: 5px 0 10px 0;
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.mdMobile}px) {
+    font-size: 32px;
+  }
+
+  ${Lightbulb} {
+    position: relative;
+    right: unset;
+    display: block;
+    top: unset;
+    margin-left: 20px;
+    animation: rainbow 1s ease infinite;
+
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+      display: none;
+    }
   }
 `;

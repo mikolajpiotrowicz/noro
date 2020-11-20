@@ -7,55 +7,38 @@ import {
   AboutCharter,
   Date,
   NewDate,
-  AboutRow
+  AboutRow,
 } from "./styled";
 import { getStaticContent } from "../../services/static-file";
 import { Text } from "../../styled/typography";
+import { useTranslation } from "react-i18next";
 
 export const AboutScreen = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <SectionHeading>
-        <Header1>About</Header1>
+        <Header1>{t("pageHeading.about")}</Header1>
       </SectionHeading>
       <AboutWrapper>
         <AboutRow>
-          <img
-            src={getStaticContent("misc/me2.jpg")}
-            alt="It's me!"
-          />
+          <img src={getStaticContent("misc/me2.jpg")} alt="It's me!" />
           <AboutContent>
-            {" "}
-            <b>NORO ART</b> draws inspiration from her everyday reality as well
-            as from numerous trips she has taken. <br />
-            The artist's dreams are composed of intimate journeys from the
-            sacred places of ancient tribes to distant and undiscovered
-            galaxies. <br />
-            She reveals her complex emotions through vivid colors and their
-            surprising combinations. <br />
-            The surrealistic character of her works is the representative
-            feature of her artistry.
-            <br />
-            The most remarkable trait of NORO ART is the technique she has
-            favored - heavy application of UV paints allow her compositions to
-            mesmerize the audience at night time with a strong game of contrasts
-            between light and darkness.
+            <b>NORO ART</b> {t("aboutPage.me1")} <br /> {t("aboutPage.me2")}{" "}
+            <br /> {t("aboutPage.me3")} <br /> {t("aboutPage.me4")} <br />
           </AboutContent>
         </AboutRow>
         <AboutRow>
-          <img
-            src={getStaticContent("misc/me3.jpg")}
-            alt="It's me!"
-          />
+          <img src={getStaticContent("misc/me3.jpg")} alt="It's me!" />
           <AboutContent>
-            <RainbowText>upcoming shows</RainbowText>
+            <RainbowText>{t("aboutPage.upcoming")}</RainbowText>
             <Date>
               <b>2020:</b>
             </Date>
             <Text>
               <b>
-                <NewDate>7.11.2020</NewDate> "Art Trans-mission", Transformator,
-                Wrocław
+                <NewDate>7.11.2020</NewDate>
+                {t("aboutPage.upcomingEv1")}
               </b>
             </Text>
             <AboutCharter>EXHIBITIONS</AboutCharter>
@@ -63,32 +46,27 @@ export const AboutScreen = () => {
               <b>2019:</b>
             </Date>
             <Text>
-              <b> "Transformation", Transformator, Wrocław, March</b>
+              <b>{t("aboutPage.exhibition2019v1")}</b>
             </Text>
             <Date>
               <b>2018:</b>
             </Date>
             <Text>
-              <b>“Exhibition Room“, Wyspa Tamka (graffiti), Wrocław,</b>
+              <b>{t("aboutPage.exhibition2018v1")}</b>
             </Text>
             <Text>
-              <b>
-                “Through a Woman's Eyes”, Lower Silesia Film Centre ( DCF),
-                Wrocław, June
-              </b>
+              <b>{t("aboutPage.exhibition2018v2")}</b>
             </Text>
 
             <Date>
               <b>2017:</b>
             </Date>
             <Text>
-              <b>“UV Collages” Szklarnia Cafe, Wrocław, January</b>
+              <b> {t("aboutPage.exhibition2017v1")}</b>
             </Text>
             <AboutCharter>education</AboutCharter>
             <Text>
-              <b>
-                Architecture, Wrocław University of Science and Technology 2018
-              </b>
+              <b>{t("aboutPage.educationData")}</b>
             </Text>
           </AboutContent>
         </AboutRow>
