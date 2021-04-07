@@ -7,7 +7,7 @@ export const CloseWrapper = styled(Link)`
   right: 13px;
   z-index: 5;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     right: 75px;
     top: 80px;
   }
@@ -15,7 +15,7 @@ export const CloseWrapper = styled(Link)`
   svg {
     width: 25px;
 
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+    @media screen and  (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
       width: 40px;
     }
   }
@@ -31,11 +31,11 @@ export const LogoWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 40px;
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media screen and  (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     top: 50px;
     display: none;
   }
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.desktop}px) {
     top: 30px;
   }
 `;
@@ -52,12 +52,13 @@ export const LeftArrow = styled.img`
   user-select: none;
   display: none;
   z-index: 10;
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     left: 15px;
     display: block;
     position: fixed;
   }
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.tablet}px) {
     left: 55px;
   }
 `;
@@ -71,12 +72,14 @@ export const RightArrow = styled.img`
   cursor: pointer;
   user-select: none;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.mobile}px) {
     right: 15px;
     display: block;
     position: fixed;
   }
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.tablet}px) {
     right: 55px;
   }
 `;
@@ -99,7 +102,8 @@ export const PaintingData = styled.div`
     right: -40px;
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.tablet}px) {
     position: fixed;
     top: 50%;
     bottom: unset;
@@ -109,7 +113,8 @@ export const PaintingData = styled.div`
       display: none;
     }
   }
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.tablet}px) {
     top: 50%;
     bottom: unset;
     left: 55%;
@@ -126,7 +131,8 @@ export const ZoomInWrapper = styled.div`
     display: none;
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.tablet}px) {
     width: unset;
     max-width: 670px;
     position: fixed;
@@ -138,7 +144,8 @@ export const ZoomInWrapper = styled.div`
       display: block;
     }
   }
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop}px) {
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.desktop}px) {
     left: 200px;
   }
 `;
@@ -183,7 +190,8 @@ export const Lightbulb = styled.img<{ isUv: boolean }>`
   background-size: 300% 300%;
   animation: rainbow 1s ease infinite;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.tablet}px) {
     top: 77px;
     right: 160px;
     display: block;
@@ -197,7 +205,8 @@ export const PaintingTitle = styled.h1`
   justify-content: space-between;
   align-items: center;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.mdMobile}px) {
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.mdMobile}px) {
     font-size: 32px;
   }
 
@@ -208,7 +217,8 @@ export const PaintingTitle = styled.h1`
     top: unset;
     margin-left: 20px;
 
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+    @media screen and (min-width: ${(props) =>
+        props.theme.breakpoints.tablet}px) {
       display: none;
     }
   }

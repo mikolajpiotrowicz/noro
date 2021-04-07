@@ -6,7 +6,7 @@ export const GalleryWrapper = styled.div`
   justify-content: space-between;
   margin: 32px 0 20px 0;
   flex-wrap: wrap;
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     flex-direction: row;
   }
 `;
@@ -16,11 +16,11 @@ export const GalleryColumn = styled.div`
   flex-direction: column;
   width: 100%;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     width: calc(50% - 5px);
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media screen and  (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     width: calc(33% - 16px);
   }
 
@@ -28,7 +28,7 @@ export const GalleryColumn = styled.div`
     width: 100%;
     margin-bottom: 10px;
 
-    @media (min-width: ${(props) => props.theme.breakpoints.desktop}px) {
+    @media screen and  (min-width: ${(props) => props.theme.breakpoints.desktop}px) {
 
     margin-bottom: 32px;
     }

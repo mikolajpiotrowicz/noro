@@ -10,7 +10,7 @@ export const LogoWrapper = styled(Link)`
   display: flex;
   align-items: center;
   margin: 10px 0 0 10px;
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     display: flex;
     margin-top: 5px;
   }

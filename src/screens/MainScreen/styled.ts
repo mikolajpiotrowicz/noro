@@ -52,13 +52,13 @@ export const SlidersWrap = styled.div`
   height: 650px;
   flex-direction: column;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     height: 400px;
     flex-direction: row;
     margin: 20px 0 50px 0;
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     height: 500px;
   }
 
@@ -74,21 +74,21 @@ export const SlidersWrap = styled.div`
 
   ${SingleGalleryWrap}:nth-of-type(1) {
     width: 100%;
-    @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+    @media  screen and (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
       width: calc(50% - 5px);
     }
 
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+    @media screen and  (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
       width: calc(60% - 12px);
     }
   }
   ${SingleGalleryWrap}:nth-of-type(2) {
     width: 100%;
-    @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+    @media  screen and (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
       width: calc(50% - 5px);
     }
 
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+    @media  screen and (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
       width: calc(40% - 12px);
     }
   }

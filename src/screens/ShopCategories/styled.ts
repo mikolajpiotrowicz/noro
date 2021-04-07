@@ -12,11 +12,11 @@ export const Category = styled(Link)`
   width: 100%;
   margin-bottom: 20px;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     width: calc(50% - 25px);
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop}px) {
+  @media screen and  (min-width: ${(props) => props.theme.breakpoints.desktop}px) {
     width: calc(33% - 50px);
   }
 `;

@@ -17,7 +17,7 @@ export const AboutContent = styled.div`
   line-height: 1.61;
   font-size: ${(props) => props.theme.size.h2}px;
   margin: 20px 0 0 0;
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media screen and  (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     margin: 0;
     width: 56%;
   }
@@ -45,7 +45,7 @@ export const AboutRow = styled.div`
   margin-bottom: 20px;
   flex-direction: column;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media screen and  (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     flex-direction: row;
   }
 
@@ -53,7 +53,7 @@ export const AboutRow = styled.div`
     width: 100%;
     margin: 0 60px 0 0;
 
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+    @media screen and  (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
       width: 40%;
     }
   }

@@ -11,10 +11,10 @@ export const SectionHeading = styled.div`
     font-weight: 900;
     font-size: ${(props) => props.theme.size.h3}px;
     
-    @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+    @media screen and  (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
       font-size: ${(props) => props.theme.size.h2}px;
     }
-        @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+        @media screen and  (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
       font-size: ${(props) => props.theme.size.h1}px;
     }
 `;

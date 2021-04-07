@@ -13,7 +13,7 @@ export const Links = styled.div`
   margin: 0 0 0 10px;
   max-width: 800px;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     margin: 0 auto 10px auto;
     justify-content: space-between;
     flex-direction: row;
@@ -34,7 +34,7 @@ export const Copy = styled.p`
   text-align: center;
   margin-bottom: 0;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     margin: 0 auto;
     justify-content: space-between;
     flex-direction: row;

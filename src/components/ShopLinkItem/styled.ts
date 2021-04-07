@@ -12,11 +12,11 @@ export const ShopLinkItemWrapper = styled(Link)`
     margin-right: 0px;
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
     width: calc(50% - 5px);
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     width: calc(33% - 28px);
     box-sizing: border-box;
   }

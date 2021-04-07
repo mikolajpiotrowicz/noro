@@ -16,7 +16,8 @@ export const HeaderWrapper = styled.div<{ hideBoxShadow: boolean }>`
       : "0 3px 8px rgba(0, 0, 0, 0.25)"};
   transition: box-shadow 0.3s ease-in-out;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.mobile}px) {
     justify-content: center;
     position: unset;
     box-shadow: none;
@@ -28,7 +29,8 @@ export const DesktopMenu = styled.ul`
   list-style: none;
   margin-top: 20px;
   margin-left: 125px;
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+  @media screen and  (min-width: ${(props) =>
+    props.theme.breakpoints.mobile}px) {
 		display: flex;
   }
 }
@@ -52,7 +54,8 @@ export const HamburgerWrapper = styled.div<{ isOpen: boolean }>`
   transition: 0.28s all ease-in;
   transition-delay: 0.1s;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}px) {
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.mobile}px) {
     display: none;
   }
 `;
@@ -103,4 +106,3 @@ export const Overlay = styled.div<{ isOpen: boolean }>`
   transition: 0.3s opacity linear;
   display: ${(props) => (props.isOpen ? "block" : "none")};
 `;
-

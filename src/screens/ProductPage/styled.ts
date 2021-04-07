@@ -59,7 +59,7 @@ export const Lightbulb = styled.img<{ isUv: boolean }>`
   -o-animation: rainbow 3s ease infinite;
   animation: rainbow 3s ease infinite;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media  screen and (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     top: 72px;
     right: 150px;
   }
