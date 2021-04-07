@@ -24,7 +24,6 @@ export const Gallery = () => {
   });
 
   galleryPaintingsData.forEach((item, i) => {
-
     if (i % 2 === 1) {
       tabletModeCol2.push(item);
     }
@@ -32,7 +31,7 @@ export const Gallery = () => {
       tabletModeCol1.push(item);
     }
   });
-  
+
   galleryPaintingsData.forEach((item, i) => {
     if (i % 3 === 2) {
       column3.push(item);
@@ -44,13 +43,7 @@ export const Gallery = () => {
       column1.push(item);
     }
   });
-  
-  
-  
-  
-  
-  console.log("Web ver: ", column1, column2, column3);
-  console.log("Mobile ver: ", tabletModeCol1, tabletModeCol2);
+
   return (
     <GalleryWrapper>
       {isTabletToSmallDesktop ? (

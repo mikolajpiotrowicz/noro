@@ -1,9 +1,18 @@
 import styled from "styled-components";
+import { BuyButton } from '../../styled/reusable';
 
 export const ProductPageWrapper = styled.div``;
 export const ProductDataWrap = styled.div`
-  margin-top: 32px;
+  margin: 32px 0;
   display: flex;
+  flex-direction: column;
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.tablet}px) {
+    flex-direction: row;
+  }
+  ${BuyButton} {
+    margin: 32px 0;
+  }
 `;
 export const ProductInfo = styled.div``;
 export const ProductName = styled.h1``;
@@ -14,12 +23,13 @@ export const ProductPrice = styled.h3`
 export const ProductImage = styled.div`
   width: 480px;
   margin-right: 64px;
-  
+  max-width: 100%;
+
   .gallery-image {
     width: 480px;
+     max-width: 100%;
   }
 `;
-
 
 export const Lightbulb = styled.img<{ isUv: boolean }>`
   width: 30px;
@@ -59,7 +69,8 @@ export const Lightbulb = styled.img<{ isUv: boolean }>`
   -o-animation: rainbow 3s ease infinite;
   animation: rainbow 3s ease infinite;
 
-  @media  screen and (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.tablet}px) {
     top: 72px;
     right: 150px;
   }
