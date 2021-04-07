@@ -9,33 +9,48 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useMediaQuery } from "react-responsive";
-import { theme } from "../../styled/theme";
 
 export const Gallery = () => {
-  const tabletModeCol1 = galleryPaintingsData.slice(
-    0,
-    Math.ceil(galleryPaintingsData.length / 2),
-  );
-  const tabletModeCol2 = galleryPaintingsData.slice(
-    Math.ceil(galleryPaintingsData.length / 2),
-    galleryPaintingsData.length
-  );
+  const tabletModeCol1 = [];
+  const tabletModeCol2 = [];
 
-  const column1 = galleryPaintingsData.slice(0, COLUMNS_HARDCODE.FIRST);
-  const column2 = galleryPaintingsData.slice(
-    COLUMNS_HARDCODE.FIRST,
-    COLUMNS_HARDCODE.SECOND + COLUMNS_HARDCODE.FIRST,
-  );
-  const column3 = galleryPaintingsData.slice(
-    COLUMNS_HARDCODE.SECOND + COLUMNS_HARDCODE.FIRST,
-    galleryPaintingsData.length,
-  );
+  const column1 = [];
+  const column2 = [];
+  const column3 = [];
 
   const isTabletToSmallDesktop = useMediaQuery({
     minDeviceWidth: 768,
     maxDeviceWidth: 1024,
   });
 
+  galleryPaintingsData.forEach((item, i) => {
+
+    if (i % 2 === 1) {
+      tabletModeCol2.push(item);
+    }
+    if (i % 2 === 0) {
+      tabletModeCol1.push(item);
+    }
+  });
+  
+  galleryPaintingsData.forEach((item, i) => {
+    if (i % 3 === 2) {
+      column3.push(item);
+    }
+    if (i % 3 === 1) {
+      column2.push(item);
+    }
+    if (i % 3 === 0) {
+      column1.push(item);
+    }
+  });
+  
+  
+  
+  
+  
+  console.log("Web ver: ", column1, column2, column3);
+  console.log("Mobile ver: ", tabletModeCol1, tabletModeCol2);
   return (
     <GalleryWrapper>
       {isTabletToSmallDesktop ? (

@@ -10,6 +10,7 @@ import { GalleryItem } from "../../screens/GalleryItem";
 import { ShopCategories } from "../../screens/ShopCategories";
 import { ShopCategory } from "../../screens/ShopCategory";
 import { ProductPage } from "../../screens/ProductPage";
+import { UserDataView } from '../../screens/UserDataView';
 
 export const Routing = () => {
   return (
@@ -22,7 +23,7 @@ export const Routing = () => {
       <RouteWithLayout
         component={ShopCategory}
         path={[
-          ROUTING[ROUTES.SHOP_ORGINALS].path,
+          ROUTING[ROUTES.SHOP_ORIGINALS].path,
           ROUTING[ROUTES.SHOP_PRINTS].path,
           ROUTING[ROUTES.SHOP_APPAREL].path,
         ]}
@@ -35,6 +36,7 @@ export const Routing = () => {
         component={ShopCategories}
         path={ROUTING[ROUTES.SHOP_CATEGORIES].path}
       />
+      <RouteWithLayout component={UserDataView} path={ROUTING[ROUTES.FINALIZATION].path} />
     </Switch>
   );
 };

@@ -20,14 +20,14 @@ export const ShopCategories = () => {
         <Header1>{t("pageHeading.shop")}</Header1>
       </SectionHeading>
       <Categories>
-        <Category to={ROUTING[ROUTES.SHOP_ORGINALS].path}>
+        <Category to={ROUTING[ROUTES.SHOP_ORIGINALS].path}>
           <CategoryImage src={getStaticContent("small-pics/17-bozenka.jpg")} />
           <CategoryTitle>{t("shop.categoryOriginal")}</CategoryTitle>
         </Category>
-        <Category to={ROUTING[ROUTES.SHOP_PRINTS].path}>
-          <CategoryImage src={getStaticContent("small-pics/25-pansia.jpg")} />
-          <CategoryTitle>{t("shop.categoryPrints")}</CategoryTitle>
-        </Category>
+        {/*<Category to={ROUTING[ROUTES.SHOP_PRINTS].path}>*/}
+        {/*  <CategoryImage src={getStaticContent("small-pics/25-pansia.jpg")} />*/}
+        {/*  <CategoryTitle>{t("shop.categoryPrints")}</CategoryTitle>*/}
+        {/*</Category>*/}
       </Categories>
     </ShopCategoriesWrapper>
   );

@@ -20,28 +20,7 @@ export const ProductImage = styled.div`
   }
 `;
 
-export const BuyButton = styled.button`
-  transition: 0.2s all ease-in;
-  border-radius: 5px;
-  color: white;
-  position: relative;
-  font-weight: bold;
-  padding: 13px 60px;
-  border: none;
-  font-size: ${(props) => props.theme.size.h2}px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-  background-image: linear-gradient(
-    ${(props) =>
-      `${props.theme.colors.gradient1}, ${props.theme.colors.gradient2}`}
-  );
-  z-index: 1;
 
-  &:hover {
-    box-shadow: 0px 13px 24px 1px rgba(246, 26, 26, 0.51);
-    transform: scale(1.04);
-  }
-`;
 export const Lightbulb = styled.img<{ isUv: boolean }>`
   width: 30px;
   background: ${(props) =>

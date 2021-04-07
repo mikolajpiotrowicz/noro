@@ -10,7 +10,7 @@ import { Loader } from "../../components/Loader";
 import { ROUTES, ROUTING } from "../../services/routing";
 
 const spaPathToCategory = {
-  [ROUTING[ROUTES.SHOP_ORGINALS].path]: "16",
+  [ROUTING[ROUTES.SHOP_ORIGINALS].path]: "16",
   [ROUTING[ROUTES.SHOP_PRINTS].path]: "17",
   [ROUTING[ROUTES.SHOP_APPAREL].path]: "18",
 };

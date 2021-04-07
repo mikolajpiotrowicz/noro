@@ -19,7 +19,7 @@ export const locales_en = {
       categoryOriginal: "FEATURED ORIGINAL WORKS",
       categoryPrints: "FINE ART CANVAS PRINTS",
       price: "Price",
-      buyNow: "Add to cart",
+      buyNow: "Contact",
     },
     contactPage: {
       row1: "For general inquiries / interviews:",

@@ -4,29 +4,27 @@ import {
   ProductPageWrapper,
   ProductDataWrap,
   ProductImage,
-  BuyButton,
   ProductPrice,
   ProductName,
   Lightbulb,
   ProductVariants,
   ProductVariant,
 } from "./styled";
-import { SectionHeading } from "../../styled/reusable";
+import { BuyButton, SectionHeading } from "../../styled/reusable";
 import { Header1 } from "../../styled/typography";
 import { RouteComponentProps, withRouter } from "react-router";
 import { Product } from "../../models/WooComerce";
 import InnerImageZoom from "react-inner-image-zoom";
 import { theme } from "../../styled/theme";
-import { getStaticContent } from "../../services/static-file";
-import { getProductVariations } from "../../services/api/client";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+import { ROUTES, ROUTING } from "../../services/routing";
+
 const ProductPageNotConnected: React.FC<RouteComponentProps<
   null,
   null,
   { product: Product }
->> = ({ location }) => {
+>> = ({ location, history }) => {
   const { t } = useTranslation();
-  const [variants, setVariants] = React.useState<Product[]>([]);
   const getProduct = React.useCallback(() => {
     if (location.state && location.state.product) {
       return location.state.product;
@@ -35,14 +33,6 @@ const ProductPageNotConnected: React.FC<RouteComponentProps<
   }, []);
 
   const product = getProduct();
-
-  const fetchVariants = React.useCallback(async () => {
-    setVariants(await getProductVariations(product.id));
-  }, []);
-
-  React.useEffect(() => {
-    fetchVariants();
-  }, []);
 
   if (!product) {
     <div>not found</div>;
@@ -74,8 +64,14 @@ const ProductPageNotConnected: React.FC<RouteComponentProps<
           <div
             dangerouslySetInnerHTML={{ __html: product.short_description }}
           />
-          <ProductPrice>{t('shop.price')}: {product.price}zł</ProductPrice>
-          <BuyButton>{t('shop.buyNow')}</BuyButton>
+          <ProductPrice>
+            {t("shop.price")}: {product.price}zł
+          </ProductPrice>
+          <BuyButton
+            href="mailto:noroart.contact@gmail.com"
+          >
+            {t("shop.buyNow")}
+          </BuyButton>
         </ProductInfo>
       </ProductDataWrap>
     </ProductPageWrapper>

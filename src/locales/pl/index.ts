@@ -19,7 +19,7 @@ export const locales_pl = {
       categoryOriginal: "DOSTĘPNE OBRAZY",
       categoryPrints: "REPRODUKCJE NA PŁÓTNIE",
       price: "Cena",
-      buyNow: "Dodaj do koszyka",
+      buyNow: "Kontakt",
     },
     contactPage: {
       row1: "Kontakt: ",

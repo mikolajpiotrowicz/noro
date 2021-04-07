@@ -6,6 +6,92 @@ export const COLUMNS_HARDCODE = {
 
 export const galleryPaintingsData = [
   {
+    name: "Crystal Noise",
+    technique: "Oil, acrylic and medium and mirror on canvas",
+    size: "138 x 72 cm",
+    price: "SOLD",
+    year: "2021",
+    file: "szum",
+  },
+  {
+    name: "MLMA",
+    technique: "Oil, acrylic and medium on canvas",
+    size: "110 x 90 cm",
+    price: "FOR SALE",
+    year: "2021",
+    file: "azja",
+  },
+  {
+    name: "Hope",
+    technique: "Oil, acrylic, medium and mirror on canvas",
+    size: "115 x 75 cm",
+    price: "FOR SALE",
+    year: "2021",
+    file: "hope",
+  },
+  {
+    name: "Chromatic Beauty",
+    technique: "Oil, acrylic, medium on canvas",
+    size: "115 x 75 cm",
+    price: "SOLD",
+    year: "2020",
+    file: "chromatic",
+  },
+  {
+    name: "The colors of her thoughts ",
+    technique: "Oil, acrylic, medium on canvas",
+    size: "115 x 75 cm",
+    price: "SOLD",
+    year: "2020",
+    file: "thecolors",
+  },
+  {
+    name: "Divine",
+    technique: "Acrylic and UV on canvas",
+    size: "100 x 70 cm",
+    price: "FOR SALE",
+    year: "2020",
+    file: "Divine",
+    uv: true,
+  },
+  {
+    name: "BlueRay",
+    technique: "Oil on cotton paper",
+    size: "42 x 29,7 cm",
+    price: "SOLD",
+    year: "2020",
+    file: "blue",
+  },
+
+  {
+    name: "Alice in a Trippyland",
+    technique: "Oil on cotton paper",
+    size: "42 x 29,7 cm",
+    price: "SOLD",
+    year: "2020",
+    file: "alice",
+  },
+
+  {
+    name: "Mysz",
+    technique: "Oil on cotton paper",
+    size: "42 x 29,7 cm",
+    price: "SOLD",
+    year: "2020",
+    file: "mysz",
+  },
+
+  {
+    name: "PsychOLKA",
+    technique: "Acrylic, oil, medium and UV paint on canvas",
+    size: "120 x 120 cm",
+    price: "FOR SALE",
+    year: "2020",
+    file: "psycho",
+    uv: true,
+  },
+
+  {
     name: "Desert Flower",
     technique: "Oil, acrylic, glue and mirror from recycling on canvas",
     size: "120 x 100 cm",
@@ -155,6 +241,28 @@ export const galleryPaintingsData = [
     file: "16-Nefertiti",
   },
   {
+    name: "Stachursky",
+    technique: "acrylic on canvas / UV",
+    size: "100 x 100 cm",
+    year: "2019",
+    file: "21-stachursky",
+    uv: true,
+  },
+  {
+    name: "Burczybear",
+    technique: "acrylic on canvas",
+    size: "120 x 120 cm",
+    year: "2018",
+    file: "20-pham",
+  },
+  {
+    name: "Krzysztof Krawczyk",
+    technique: "acrylic on canvas",
+    size: "80 x 80 cm",
+    year: "2018",
+    file: "23-krzysztof-krawczyk",
+  },
+  {
     name: "Boska Bożenka",
     technique: "acrylic on canvas / UV",
     size: "80 x 80 cm",
@@ -179,33 +287,11 @@ export const galleryPaintingsData = [
     uv: true,
   },
   {
-    name: "Burczybear",
-    technique: "acrylic on canvas",
-    size: "120 x 120 cm",
-    year: "2018",
-    file: "20-pham",
-  },
-  {
-    name: "Stachursky",
-    technique: "acrylic on canvas / UV",
-    size: "100 x 100 cm",
-    year: "2019",
-    file: "21-stachursky",
-    uv: true,
-  },
-  {
     name: "Karolina Dobkowska",
     technique: "acrylic on canvas / UV",
     size: "80 x 80 cm",
     year: "2019",
     file: "22-karolinka",
-  },
-  {
-    name: "Krzysztof Krawczyk",
-    technique: "acrylic on canvas",
-    size: "80 x 80 cm",
-    year: "2018",
-    file: "23-krzysztof-krawczyk",
   },
   {
     name: "Frida",
@@ -263,6 +349,7 @@ export const galleryPaintingsData = [
   },
 ];
 
+const columnOnePaintingData = [];
 const getPairedGallery = () => {
   const pairData = {};
   galleryPaintingsData.forEach((item) => {

@@ -181,7 +181,7 @@ export const Lightbulb = styled.img<{ isUv: boolean }>`
       
       `};
   background-size: 300% 300%;
-  animation: rainbow 1s ease infinite, pulse 3s ease infinite;
+  animation: rainbow 1s ease infinite;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
     top: 77px;

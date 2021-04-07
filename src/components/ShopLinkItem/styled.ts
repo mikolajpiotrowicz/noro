@@ -6,6 +6,7 @@ export const ShopLinkItemWrapper = styled(Link)`
   flex-direction: column;
   width: 100%;
   margin-right: 32px;
+  margin-bottom: 32px;
 
   &:nth-of-type(3) {
     margin-right: 0px;
@@ -16,7 +17,7 @@ export const ShopLinkItemWrapper = styled(Link)`
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}px) {
-    width: calc(33% - 18px);
+    width: calc(33% - 28px);
     box-sizing: border-box;
   }
 `;
