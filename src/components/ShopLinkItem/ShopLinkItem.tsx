@@ -36,7 +36,7 @@ export const ShopLinkItem: React.FC<Props> = ({ product }) => {
     >
       <ShopLinkItemImage src={getThumbnailSrc(product.images)} />
       <ShopLinkItemName>{product.name}</ShopLinkItemName>
-      <ShopLinkItemProp>{product.regular_price}zł</ShopLinkItemProp>
+      {/*<ShopLinkItemProp>{product.regular_price}zł</ShopLinkItemProp>*/}
     </ShopLinkItemWrapper>
   );
 };

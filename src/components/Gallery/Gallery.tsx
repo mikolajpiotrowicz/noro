@@ -18,9 +18,17 @@ export const Gallery = () => {
   const column2 = [];
   const column3 = [];
 
-  const isTabletToSmallDesktop = useMediaQuery({
-    minDeviceWidth: 768,
-    maxDeviceWidth: 1024,
+  const isMobile = useMediaQuery({
+    minDeviceWidth: 0,
+    maxDeviceWidth: 505,
+  });
+  const isTablet = useMediaQuery({
+    minDeviceWidth: 506,
+    maxDeviceWidth: 1023,
+  });
+  const isDesktop = useMediaQuery({
+    minDeviceWidth: 1024,
+    maxDeviceWidth: 4096,
   });
 
   galleryPaintingsData.forEach((item, i) => {
@@ -44,9 +52,24 @@ export const Gallery = () => {
     }
   });
 
+  
+  
   return (
     <GalleryWrapper>
-      {isTabletToSmallDesktop ? (
+      {isMobile && (
+        <GalleryColumn>
+          {galleryPaintingsData.map((item) => (
+            <Link key={item.name} to={`/gallery/${item.name}`}>
+              <LazyLoadImage
+                alt={item.name}
+                effect="blur"
+                src={getStaticContent(`small-pics/${item.file}.jpg`)}
+              />
+            </Link>
+          ))}
+        </GalleryColumn>
+      )}
+      {isTablet && (
         <>
           <GalleryColumn>
             {tabletModeCol1.map((item) => (
@@ -71,7 +94,9 @@ export const Gallery = () => {
             ))}
           </GalleryColumn>
         </>
-      ) : (
+      )}
+
+      {isDesktop && (
         <>
           <GalleryColumn>
             {column1.map((item) => (

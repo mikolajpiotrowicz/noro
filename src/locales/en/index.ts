@@ -16,7 +16,7 @@ export const locales_en = {
       contactR2: "Don’t Hesitate to Get in Touch",
     },
     shop: {
-      categoryOriginal: "FEATURED ORIGINAL WORKS",
+      categoryOriginal: "Featured Original Works",
       categoryPrints: "FINE ART CANVAS PRINTS",
       price: "Price",
       buyNow: "Contact",

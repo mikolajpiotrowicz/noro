@@ -8,6 +8,7 @@ import { ShopLinkItem } from "../../components/ShopLinkItem";
 import { categoriesData } from "../../services/shop";
 import { Loader } from "../../components/Loader";
 import { ROUTES, ROUTING } from "../../services/routing";
+import { useTranslation } from 'react-i18next';
 
 const spaPathToCategory = {
   [ROUTING[ROUTES.SHOP_ORIGINALS].path]: "16",
@@ -18,6 +19,7 @@ const spaPathToCategory = {
 const ShopCategoryNotConnected: React.FC<RouteComponentProps> = ({
   location,
 }) => {
+  const { t } = useTranslation();
   const [products, setProducts] = React.useState([]);
   const [isLoading, setLoading] = React.useState(false);
   const { pathname } = location;
@@ -36,7 +38,7 @@ const ShopCategoryNotConnected: React.FC<RouteComponentProps> = ({
   return (
     <ShopCategoryWrapper>
       <SectionHeading>
-        <Header1>{categoriesData[pathname].title}</Header1>
+        <Header1>{t('shop.categoryOriginal')}</Header1>
       </SectionHeading>
       {isLoading && <Loader isLoading={isLoading} />}
       <Products>

@@ -53,9 +53,9 @@ export const HeaderNotConnected: React.FC<RouteComponentProps> = ({
             <Link to={ROUTING[ROUTES.GALLERY].path}>{t("header.gallery")}</Link>
           </MobileMenuItem>
           <MobileMenuItem
-            isActive={pathname === ROUTING[ROUTES.SHOP_CATEGORIES].path}
+            isActive={pathname === ROUTING[ROUTES.SHOP_ORIGINALS].path}
           >
-            <Link to={ROUTING[ROUTES.SHOP_CATEGORIES].path}>
+            <Link to={ROUTING[ROUTES.SHOP_ORIGINALS].path}>
               {t("header.shop")}
             </Link>
           </MobileMenuItem>
@@ -78,9 +78,9 @@ export const HeaderNotConnected: React.FC<RouteComponentProps> = ({
           <Link to={ROUTING[ROUTES.GALLERY].path}>{t("header.gallery")}</Link>
         </DesktopMenuItem>
         <DesktopMenuItem
-          isActive={pathname === ROUTING[ROUTES.SHOP_CATEGORIES].path}
+          isActive={pathname === ROUTING[ROUTES.SHOP_ORIGINALS].path}
         >
-          <Link to={ROUTING[ROUTES.SHOP_CATEGORIES].path}>
+          <Link to={ROUTING[ROUTES.SHOP_ORIGINALS].path}>
             {t("header.shop")}
           </Link>
         </DesktopMenuItem>

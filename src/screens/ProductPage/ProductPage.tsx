@@ -64,9 +64,9 @@ const ProductPageNotConnected: React.FC<RouteComponentProps<
           <div
             dangerouslySetInnerHTML={{ __html: product.short_description }}
           />
-          <ProductPrice>
-            {t("shop.price")}: {product.price}zł
-          </ProductPrice>
+          {/*<ProductPrice>*/}
+          {/*  {t("shop.price")}: {product.price}zł*/}
+          {/*</ProductPrice>*/}
           <BuyButton
             href="mailto:noroart.contact@gmail.com"
           >

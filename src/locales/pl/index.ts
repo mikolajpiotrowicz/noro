@@ -16,7 +16,7 @@ export const locales_pl = {
       contactR2: "Nie wahaj się i napisz do mnie.",
     },
     shop: {
-      categoryOriginal: "DOSTĘPNE OBRAZY",
+      categoryOriginal: "Dostępne Obrazy",
       categoryPrints: "REPRODUKCJE NA PŁÓTNIE",
       price: "Cena",
       buyNow: "Kontakt",

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { LogoWrapper } from "../Logo/styled";
 export const HeaderWrapper = styled.div<{ hideBoxShadow: boolean }>`
   display: flex;
   justify-content: flex-start;
@@ -15,12 +15,21 @@ export const HeaderWrapper = styled.div<{ hideBoxShadow: boolean }>`
       ? "0 3px 8px rgba(0, 0, 0, 0)"
       : "0 3px 8px rgba(0, 0, 0, 0.25)"};
   transition: box-shadow 0.3s ease-in-out;
-
+  ${LogoWrapper} {
+    margin-left: 5px;
+  }
   @media screen and (min-width: ${(props) =>
       props.theme.breakpoints.mobile}px) {
-    justify-content: center;
+    justify-content: space-between;
     position: unset;
     box-shadow: none;
+    ${LogoWrapper} {
+      margin-left: 0;
+    }
+  }
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.tablet}px) {
+    justify-content: center;
   }
 `;
 
@@ -28,19 +37,38 @@ export const DesktopMenu = styled.ul`
   display: none;
   list-style: none;
   margin-top: 20px;
-  margin-left: 125px;
   @media screen and  (min-width: ${(props) =>
     props.theme.breakpoints.mobile}px) {
 		display: flex;
+		padding-left: 20px;
+  }
+    @media screen and  (min-width: ${(props) =>
+      props.theme.breakpoints.tablet}px) {
+		margin-left: 50px;
+  }
+    @media screen and  (min-width: ${(props) =>
+      props.theme.breakpoints.desktop}px) {
+		margin-left: 125px;
   }
 }
 `;
 export const DesktopMenuItem = styled.li<{ isActive?: boolean }>`
   text-transform: uppercase;
-  margin-right: 40px;
+
   cursor: pointer;
   font-weight: bold;
+  a {
+    font-size: 15px;
+    margin-right: 15px;
+  }
 
+  @media screen and (min-width: ${(props) =>
+      props.theme.breakpoints.tablet}px) {
+    a {
+      font-size: 19px;
+      margin-right: 40px;
+    }
+  }
   ${(props) => props.isActive && `a { color: ${props.theme.colors.gray2}; }`}
   &:hover {
     font-weight: 900;

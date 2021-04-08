@@ -31,16 +31,6 @@ export const AboutScreen = () => {
         <AboutRow>
           <img src={getStaticContent("misc/me3.jpg")} alt="It's me!" />
           <AboutContent>
-            <RainbowText>{t("aboutPage.upcoming")}</RainbowText>
-            <Date>
-              <b>2020:</b>
-            </Date>
-            <Text>
-              <b>
-                <NewDate>7.11.2020</NewDate>
-                {t("aboutPage.upcomingEv1")}
-              </b>
-            </Text>
             <AboutCharter>EXHIBITIONS</AboutCharter>
             <Date>
               <b>2019:</b>
@@ -57,13 +47,7 @@ export const AboutScreen = () => {
             <Text>
               <b>{t("aboutPage.exhibition2018v2")}</b>
             </Text>
-
-            <Date>
-              <b>2017:</b>
-            </Date>
-            <Text>
-              <b> {t("aboutPage.exhibition2017v1")}</b>
-            </Text>
+            
             <AboutCharter>education</AboutCharter>
             <Text>
               <b>{t("aboutPage.educationData")}</b>

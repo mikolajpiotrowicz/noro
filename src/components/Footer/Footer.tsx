@@ -5,11 +5,14 @@ export const Footer = () => {
   return (
     <FooterWrapper>
       <Links>
-        <FooterLink>Instagram</FooterLink>
-        <FooterLink>Facebook</FooterLink>
-        <FooterLink>YouTube</FooterLink>
-        <FooterLink>TikTok</FooterLink>
-        <FooterLink>Pintrest</FooterLink>
+        <FooterLink href="https://instagram.com/noro.art">
+          Instagram
+        </FooterLink>
+        <FooterLink href="https://facebook.com/noroart">Facebook</FooterLink>
+        <FooterLink href="https://vm.tiktok.com/ZMe5EQ1h2/">TikTok</FooterLink>
+        <FooterLink href="https://pinterest.com/nareuko">
+          Pintrest
+        </FooterLink>
       </Links>
       <Copy>2020©NORO ART. All Rights Reserved</Copy>
     </FooterWrapper>

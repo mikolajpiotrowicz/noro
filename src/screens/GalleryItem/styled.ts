@@ -117,7 +117,7 @@ export const PaintingData = styled.div`
       props.theme.breakpoints.tablet}px) {
     top: 50%;
     bottom: unset;
-    left: 55%;
+    left: 60%;
   }
 `;
 
@@ -134,7 +134,7 @@ export const ZoomInWrapper = styled.div`
   @media screen and (min-width: ${(props) =>
       props.theme.breakpoints.tablet}px) {
     width: unset;
-    max-width: 670px;
+    max-width: 50%;
     position: fixed;
     transform: translate(0, -50%);
     top: 50%;
@@ -147,6 +147,7 @@ export const ZoomInWrapper = styled.div`
   @media screen and (min-width: ${(props) =>
       props.theme.breakpoints.desktop}px) {
     left: 200px;
+    max-width: 670px;
   }
 `;
 export const Lightbulb = styled.img<{ isUv: boolean }>`

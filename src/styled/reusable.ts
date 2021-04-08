@@ -49,6 +49,7 @@ export const GenericInput = styled.input<{ error: boolean; icon: boolean }>`
 `;
 
 export const BuyButton = styled.a`
+  display: inline-flex;
   transition: 0.2s all ease-in;
   border-radius: 5px;
   color: white;
@@ -57,6 +58,7 @@ export const BuyButton = styled.a`
   font-weight: bold;
   padding: 13px 60px;
   border: none;
+  margin-top: 16px;
   font-size: ${(props) => props.theme.size.h2}px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   text-transform: uppercase;

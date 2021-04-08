@@ -20,7 +20,7 @@ import { pairedGallery } from "../../services/gallery";
 import { getStaticContent } from "../../services/static-file";
 import { Logo } from "../../components/Logo";
 import { theme } from "../../styled/theme";
-
+import axios from "axios";
 interface State {
   isUv: boolean;
   closeButtonVisible: boolean;
@@ -42,11 +42,15 @@ export class GalleryItemNotConnected extends React.Component<
       closeButtonVisible: true,
     };
   }
-  public componentDidMount(): void {
+  public async componentDidMount() {
+    const currentPainting = pairedGallery[this.getName()];
+    const { isUv } = this.state;
     window.addEventListener("keydown", this.handleKeyPress);
+
     const name = this.getName();
     const names = Object.keys(pairedGallery);
     const currentIndex = names.indexOf(name);
+
     this.setState({ namesArray: names, index: currentIndex });
   }
   public componentWillUnmount(): void {
@@ -72,7 +76,7 @@ export class GalleryItemNotConnected extends React.Component<
 
     const newIndex = index + 1;
     const element = namesArray[newIndex];
-    this.setState({ index: newIndex });
+    this.setState({ index: newIndex, isUv: false });
     history.push(`/gallery/${element}`);
   };
 
@@ -89,7 +93,7 @@ export class GalleryItemNotConnected extends React.Component<
     }
     const newIndex = index - 1;
     const element = namesArray[newIndex];
-    this.setState({ index: newIndex });
+    this.setState({ index: newIndex, isUv: false });
     history.push(`/gallery/${element}`);
   };
 
@@ -100,9 +104,11 @@ export class GalleryItemNotConnected extends React.Component<
   };
 
   public render() {
-    const { index, namesArray, isUv } = this.state;
+    const {  isUv } = this.state;
     const currentPainting = pairedGallery[this.getName()];
-
+    if (!currentPainting) {
+      return null;
+    }
     return (
       <GalleryItemWrapper>
         <LogoWrapper>
@@ -145,11 +151,13 @@ export class GalleryItemNotConnected extends React.Component<
         <PaintingData>
           <PaintingTitle>
             {currentPainting.name}{" "}
-            <Lightbulb
-              isUv={isUv}
-              onClick={() => this.setState({ isUv: !isUv })}
-              src={getStaticContent("misc/bulb-mask.png")}
-            />
+            {currentPainting.uv && (
+              <Lightbulb
+                isUv={isUv}
+                onClick={() => this.setState({ isUv: !isUv })}
+                src={getStaticContent("misc/bulb-mask.png")}
+              />
+            )}
           </PaintingTitle>
           <PaintingDataRow>{currentPainting.size}</PaintingDataRow>
           <PaintingDataRow>{currentPainting.year}</PaintingDataRow>
