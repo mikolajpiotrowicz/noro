@@ -46,5 +46,20 @@ export const locales_en = {
       educationData:
         "Architecture, Wrocław University of Science and Technology 2018",
     },
+    prefabs: {
+      oil: "oil",
+      acrylic: "acrylic",
+      medium: "medium",
+      mirror: "mirror",
+      canvas: "on Canvas",
+      uv: "UV",
+      paper: "paper",
+      linen: "on Linen",
+    },
+    status: {
+      sold: "SOLD",
+      forSale: "FOR SALE",
+    },
   },
+
 };

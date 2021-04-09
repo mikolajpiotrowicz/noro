@@ -7,85 +7,124 @@ export const COLUMNS_HARDCODE = {
 export const galleryPaintingsData = [
   {
     name: "Crystal Noise",
-    technique: "Oil, acrylic and medium and mirror on canvas",
+    technique: [
+      "prefabs.oil",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.mirror",
+      "prefabs.canvas",
+    ],
     size: "138 x 72 cm",
-    price: "SOLD",
+    price: "status.sold",
     year: "2021",
     file: "szum",
   },
   {
     name: "MLMA",
-    technique: "Oil, acrylic and medium on canvas",
+    technique: [
+      "prefabs.oil",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
     size: "110 x 90 cm",
-    price: "FOR SALE",
+    price: "status.forSale",
     year: "2021",
     file: "azja",
   },
   {
     name: "Hope",
-    technique: "Oil, acrylic, medium and mirror on canvas",
-    size: "115 x 75 cm",
+    technique: [
+      "prefabs.oil",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.mirror",
+      "prefabs.canvas",
+    ],
     price: "FOR SALE",
     year: "2021",
     file: "hope",
   },
   {
     name: "Chromatic Beauty",
-    technique: "Oil, acrylic, medium on canvas",
+    technique: [
+      "prefabs.oil",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "115 x 75 cm",
-    price: "SOLD",
+    price: "status.sold",
     year: "2020",
     file: "chromatic",
   },
   {
     name: "The colors of her thoughts ",
-    technique: "Oil, acrylic, medium on canvas",
+    technique: [
+      "prefabs.oil",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "115 x 75 cm",
-    price: "SOLD",
+    price: "status.sold",
     year: "2020",
     file: "thecolors",
   },
   {
     name: "Divine",
-    technique: "Acrylic and UV on canvas",
+    technique: [
+      "prefabs.UV",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
     size: "100 x 70 cm",
-    price: "FOR SALE",
+    price: "status.sold",
     year: "2020",
     file: "Divine",
     uv: true,
   },
   {
     name: "BlueRay",
-    technique: "Oil on cotton paper",
+    technique: ["prefabs.oil", "prefabs.paper", "prefabs.canvas"],
     size: "42 x 29,7 cm",
-    price: "SOLD",
+    price: "status.sold",
     year: "2020",
     file: "blue",
   },
 
   {
     name: "Alice in a Trippyland",
-    technique: "Oil on cotton paper",
+    technique: ["prefabs.oil", "prefabs.paper", "prefabs.canvas"],
     size: "42 x 29,7 cm",
-    price: "SOLD",
+    price: "status.sold",
     year: "2020",
     file: "alice",
   },
 
   {
     name: "Mysz",
-    technique: "Oil on cotton paper",
+    technique: ["prefabs.oil", "prefabs.paper", "prefabs.canvas"],
     size: "42 x 29,7 cm",
-    price: "SOLD",
+    price: "status.sold",
     year: "2020",
     file: "mysz",
   },
 
   {
     name: "PsychOLKA",
-    technique: "Acrylic, oil, medium and UV paint on canvas",
+    technique: [
+      "prefabs.oil",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "120 x 120 cm",
-    price: "FOR SALE",
+    price: "status.forSale",
     year: "2020",
     file: "psycho",
     uv: true,
@@ -93,134 +132,210 @@ export const galleryPaintingsData = [
 
   {
     name: "Desert Flower",
-    technique: "Oil, acrylic, glue and mirror from recycling on canvas",
+    technique: [
+      "prefabs.oil",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.mirror",
+      "prefabs.canvas",
+    ],
+
     size: "120 x 100 cm",
     year: "2020",
-    price: "FOR SALE",
+    price: "status.forSale",
     file: "00-mirror",
   },
   {
     name: "Mirror Selfie",
-    technique: "Oil, acrylic, glue and mirror from recycling on canvas",
+
+    technique: [
+      "prefabs.oil",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.mirror",
+      "prefabs.canvas",
+    ],
+
     size: "120 x 120 cm",
-    price: "FOR SALE",
+    price: "status.forSale",
     year: "2020",
     file: "0-mirror",
   },
   {
     name: "Magdalena",
-    technique: "acrylic on canvas",
+    technique: ["prefabs.acrylic", "prefabs.canvas"],
     size: "120 x 100 cm",
     year: "2020",
-    price: "SOLD",
+    price: "status.sold",
     file: "1-MAGDALENA",
   },
   {
     name: "Paaaa",
-    technique: "mixed media on linen",
+    technique: [
+      "prefabs.oil",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.linen",
+      "prefabs.canvas",
+    ],
     size: "100 x 100 cm",
     year: "2019",
-    price: "SOLD",
+    price: "status.sold",
     file: "2-PAAAA",
   },
   {
     name: "Background Elf",
-    technique: "acrylic and oil on canvas",
+    technique: [
+      "prefabs.oil",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "120 x 120 cm",
     year: "2019",
-    price: "FOR SALE",
+    price: "status.forSale",
     file: "3-Background-elf",
   },
   {
     name: "Hał macz ys de fysz",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "120 x 100 cm",
     year: "2019",
-    price: "FOR SALE",
+    price: "status.forSale",
     file: "4-Hae-macz-ys-de-fysz",
     uv: true,
   },
   {
     name: "Turquoise warrior",
-    technique: "mixed media on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "100 x 100 cm",
     year: "2019",
-    price: "SOLD",
+    price: "status.sold",
     file: "5-Turquoise-warrior",
     uv: true,
   },
   {
     name: "COUCOU CHLOE",
-    technique: "mixed media on canvas / mirror",
+    technique: [
+      "prefabs.mirror",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "60 x 80 cm",
     year: "2019",
     file: "6-COUCOU-CHLOE",
   },
   {
     name: "ultraMARYna",
-    technique: "acrylic on canvas",
+    technique: ["prefabs.acrylic", "prefabs.medium", "prefabs.canvas"],
+
     size: "100 x 100 cm",
     year: "2019",
-    price: "FOR SALE",
     file: "7-ultraMARYna",
   },
   {
     name: "SNAiL",
-    technique: "acrylic on canvas",
+    technique: ["prefabs.acrylic", "prefabs.medium", "prefabs.canvas"],
+
     size: "100 x 120 cm",
     year: "2019",
-    price: "FOR SALE",
+    price: "status.forSale",
     file: "8-SNAIL",
     detail: true,
   },
 
   {
     name: "SOAP",
-    technique: "acrylic on canvas",
+    technique: ["prefabs.acrylic", "prefabs.medium", "prefabs.canvas"],
+
     size: "100 x 120 cm",
     year: "2019",
     file: "9-SOAP",
   },
   {
     name: "zielONA",
-    technique: "acrylic on linen",
+    technique: [
+      "prefabs.linen",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "100 x 100 cm",
     year: "2019",
-    price: "FOR SALE",
     file: "10-zielONA",
   },
   {
     name: "GENDER",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "100 x 100 cm",
     year: "2019",
-    price: "SOLD",
+    price: "status.sold",
     file: "11-GENDER",
     uv: true,
   },
 
   {
     name: "Żemień",
-    technique: "mixed media on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "120 x 100 cm",
     year: "2019",
-    price: "SOLD",
+    price: "status.sold",
     file: "12-zem",
     uv: true,
   },
 
   {
     name: "Classic lollipop",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "120x100 cm",
     year: "2019",
-    price: "FOR SALE",
+    price: "status.sold",
     file: "13-classic-lollipop",
   },
 
   {
     name: "Insigthful",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "120x120cm",
     year: "2018",
     file: "14-Insigthful",
@@ -228,21 +343,39 @@ export const galleryPaintingsData = [
   },
   {
     name: "Metallic nymph",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "120 x 120 cm",
     year: "2018",
     file: "15-metallic-nymph",
   },
   {
     name: "Nefertiti",
-    technique: "mixed media on canvas / mirror",
+    technique: [
+      "prefabs.mirror",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "100 x 120 cm",
     year: "2020",
     file: "16-Nefertiti",
   },
   {
     name: "Stachursky",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "100 x 100 cm",
     year: "2019",
     file: "21-stachursky",
@@ -250,21 +383,39 @@ export const galleryPaintingsData = [
   },
   {
     name: "Burczybear",
-    technique: "acrylic on canvas",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "120 x 120 cm",
     year: "2018",
     file: "20-pham",
   },
   {
     name: "Krzysztof Krawczyk",
-    technique: "acrylic on canvas",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "80 x 80 cm",
     year: "2018",
     file: "23-krzysztof-krawczyk",
   },
   {
     name: "Boska Bożenka",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "80 x 80 cm",
     year: "2017",
     file: "17-bozenka",
@@ -272,7 +423,13 @@ export const galleryPaintingsData = [
   },
   {
     name: "ELEONORA",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "80 x 80 cm",
     year: "2018",
     file: "18-eleonora",
@@ -280,7 +437,13 @@ export const galleryPaintingsData = [
   },
   {
     name: "Dama z Łysiczką",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "80 x 80 cm",
     year: "2018",
     file: "19-dama",
@@ -288,14 +451,26 @@ export const galleryPaintingsData = [
   },
   {
     name: "Karolina Dobkowska",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "80 x 80 cm",
     year: "2019",
     file: "22-karolinka",
   },
   {
     name: "Frida",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "80 x 80 cm",
     year: "2018",
     file: "24-frida",
@@ -303,7 +478,13 @@ export const galleryPaintingsData = [
   },
   {
     name: "Pansua",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "80 x 80 cm",
     year: "2017",
     file: "25-pansia",
@@ -311,7 +492,13 @@ export const galleryPaintingsData = [
   },
   {
     name: "Sita Gold",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "80 x 80 cm",
     year: "2017",
     file: "sita-gold",
@@ -319,7 +506,13 @@ export const galleryPaintingsData = [
   },
   {
     name: "Sita",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "80 x 80 cm",
     year: "2017",
     file: "sita",
@@ -327,7 +520,13 @@ export const galleryPaintingsData = [
   },
   {
     name: "Beata",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "80 x 80 cm",
     year: "2018",
     file: "beata",
@@ -335,14 +534,26 @@ export const galleryPaintingsData = [
   },
   {
     name: "Ming",
-    technique: "acrylic on canvas /  UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "80 x 80 cm",
     year: "2017",
     file: "mingx",
   },
   {
     name: "BVLD",
-    technique: "acrylic on canvas / UV",
+    technique: [
+      "prefabs.uv",
+      "prefabs.acrylic",
+      "prefabs.medium",
+      "prefabs.canvas",
+    ],
+
     size: "80 x 80 cm",
     year: "2017",
     file: "lysa",

@@ -20,7 +20,9 @@ import { pairedGallery } from "../../services/gallery";
 import { getStaticContent } from "../../services/static-file";
 import { Logo } from "../../components/Logo";
 import { theme } from "../../styled/theme";
-import axios from "axios";
+import { Translation, withTranslation, WithTranslation } from "react-i18next";
+import { withProps } from "recompose";
+
 interface State {
   isUv: boolean;
   closeButtonVisible: boolean;
@@ -31,7 +33,8 @@ interface State {
 export class GalleryItemNotConnected extends React.Component<
   RouteComponentProps<{
     id: string;
-  }>,
+  }> &
+    WithTranslation,
   State
 > {
   constructor(props) {
@@ -104,7 +107,7 @@ export class GalleryItemNotConnected extends React.Component<
   };
 
   public render() {
-    const {  isUv } = this.state;
+    const { isUv } = this.state;
     const currentPainting = pairedGallery[this.getName()];
     if (!currentPainting) {
       return null;
@@ -161,8 +164,23 @@ export class GalleryItemNotConnected extends React.Component<
           </PaintingTitle>
           <PaintingDataRow>{currentPainting.size}</PaintingDataRow>
           <PaintingDataRow>{currentPainting.year}</PaintingDataRow>
-          <PaintingDataRow>{currentPainting.technique}</PaintingDataRow>
-          <PaintingDataRow>{currentPainting.price || ""}</PaintingDataRow>
+
+          <Translation>
+            {(t, { i18n }) => (
+              <>
+                <PaintingDataRow>
+                  {currentPainting.technique.map((tech, i) => {
+                    return `${t(tech)}${
+                      i !== currentPainting.technique.length - 1 ? "," : ""
+                    } `;
+                  })}
+                </PaintingDataRow>
+                <PaintingDataRow>
+                  {t(currentPainting.price) || ""}
+                </PaintingDataRow>
+              </>
+            )}
+          </Translation>
 
           <LeftArrow
             onClick={this.getPreviousItem}
@@ -178,4 +196,7 @@ export class GalleryItemNotConnected extends React.Component<
   }
 }
 
-export const GalleryItem = withRouter(GalleryItemNotConnected);
+export const GalleryItem = withProps(
+  withTranslation,
+  withRouter,
+)(GalleryItemNotConnected);

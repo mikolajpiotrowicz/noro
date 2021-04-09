@@ -45,5 +45,20 @@ export const locales_pl = {
       exhibition2017v1: "„Kolaże UV” Szklarnia Cafe, Wrocław, styczeń",
       educationData: "Architektura, Politechnika Wrocławska 2018",
     },
+    prefabs: {
+      oil: "olej",
+      acrylic: "akryl",
+      medium: "medium",
+      mirror: "lustro",
+      canvas: "na płótnie",
+      uv: "UV",
+      paper: "papier bawełniany",
+      linen: "lnianym",
+    },
+    status: {
+      sold: "SPRZEDANY",
+      forSale: "NA SPRZSEDAŻ",
+    },
   },
+
 };

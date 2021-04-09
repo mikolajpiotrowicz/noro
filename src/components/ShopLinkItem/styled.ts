@@ -31,7 +31,7 @@ export const ShopLinkItemWrapper = styled(Link)`
 `;
 export const ShopLinkItemImage = styled.img`
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
   height: 100%;
   max-height: 400px;
   object-fit: cover;
