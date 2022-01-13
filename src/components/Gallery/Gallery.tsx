@@ -5,12 +5,16 @@ import {
 } from "./../../services/gallery";
 import { GalleryWrapper, GalleryColumn } from "./styled";
 import { getStaticContent } from "../../services/static-file";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import {
+  LazyLoadImage,
+  LazyLoadComponent,
+  trackWindowScroll,
+} from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useMediaQuery } from "react-responsive";
 
-export const Gallery = () => {
+export const GalleryNotConnected = ({ scrollPosition }) => {
   const tabletModeCol1 = [];
   const tabletModeCol2 = [];
 
@@ -51,9 +55,7 @@ export const Gallery = () => {
       column1.push(item);
     }
   });
-
-  
-  
+  console.log(scrollPosition)
   return (
     <GalleryWrapper>
       {isMobile && (
@@ -61,6 +63,7 @@ export const Gallery = () => {
           {galleryPaintingsData.map((item) => (
             <Link key={item.name} to={`/gallery/${item.name}`}>
               <LazyLoadImage
+                scrollPosition={scrollPosition}
                 alt={item.name}
                 effect="blur"
                 src={getStaticContent(`small-pics/${item.file}.jpg`)}
@@ -75,6 +78,7 @@ export const Gallery = () => {
             {tabletModeCol1.map((item) => (
               <Link key={item.name} to={`/gallery/${item.name}`}>
                 <LazyLoadImage
+                  scrollPosition={scrollPosition}
                   alt={item.name}
                   effect="blur"
                   src={getStaticContent(`small-pics/${item.file}.jpg`)}
@@ -86,6 +90,7 @@ export const Gallery = () => {
             {tabletModeCol2.map((item) => (
               <Link key={item.name} to={`/gallery/${item.name}`}>
                 <LazyLoadImage
+                  scrollPosition={scrollPosition}
                   alt={item.name}
                   effect="blur"
                   src={getStaticContent(`small-pics/${item.file}.jpg`)}
@@ -102,6 +107,7 @@ export const Gallery = () => {
             {column1.map((item) => (
               <Link key={item.name} to={`/gallery/${item.name}`}>
                 <LazyLoadImage
+                  scrollPosition={scrollPosition}
                   alt={item.name}
                   effect="blur"
                   src={getStaticContent(`small-pics/${item.file}.jpg`)}
@@ -113,6 +119,7 @@ export const Gallery = () => {
             {column2.map((item) => (
               <Link key={item.name} to={`/gallery/${item.name}`}>
                 <LazyLoadImage
+                  scrollPosition={scrollPosition}
                   alt={item.name}
                   effect="blur"
                   src={getStaticContent(`small-pics/${item.file}.jpg`)}
@@ -124,6 +131,7 @@ export const Gallery = () => {
             {column3.map((item) => (
               <Link key={item.name} to={`/gallery/${item.name}`}>
                 <LazyLoadImage
+                  scrollPosition={scrollPosition}
                   alt={item.name}
                   effect="blur"
                   src={getStaticContent(`small-pics/${item.file}.jpg`)}
@@ -136,3 +144,5 @@ export const Gallery = () => {
     </GalleryWrapper>
   );
 };
+
+export const Gallery = trackWindowScroll(GalleryNotConnected);

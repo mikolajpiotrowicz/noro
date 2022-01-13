@@ -14,7 +14,7 @@ export const Footer = () => {
           Pintrest
         </FooterLink>
       </Links>
-      <Copy>2020©NORO ART. All Rights Reserved</Copy>
+      <Copy>2020©NORO ART. All Rights Reserved</Copy>sd
     </FooterWrapper>
   );
 };

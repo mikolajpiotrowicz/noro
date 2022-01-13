@@ -6,6 +6,17 @@ const api = new WooCommerceRestApi({
   consumerSecret: "cs_de96e46018c164f8fc5b98ca96b59903ca1e97e7",
   version: "wc/v3",
 });
+
+
+
+
+
+
+
+
+
+
+
 export const getProductVariations = async (id: number) => {
   try {
     const response = await api.get(`products/${id}/variations`, {
@@ -35,9 +46,8 @@ export const getProducts = async (filters) => {
 };
 
 const data = {
-  payment_method: "bacs",
-  payment_method_title: "Direct Bank Transfer",
-  set_paid: true,
+  payment_method: "przelewy24",
+  payment_method_title: "Przelewy24",
   billing: {
     first_name: "John",
     last_name: "Doe",
@@ -46,7 +56,7 @@ const data = {
     city: "San Francisco",
     state: "CA",
     postcode: "94103",
-    country: "US",
+    country: "PL",
     email: "john.doe@example.com",
     phone: "(555) 555-5555",
   },
@@ -58,11 +68,11 @@ const data = {
     city: "San Francisco",
     state: "CA",
     postcode: "94103",
-    country: "US",
+    country: "PL",
   },
   line_items: [
     {
-      product_id: 11,
+      product_id: 349,
       quantity: 1,
     },
   ],
@@ -74,12 +84,19 @@ const data = {
     },
   ],
 };
+export const createOrder = () =>
+  api
+    .post("orders", data)
+    .then((response) => {
+      const url = `serwer72845.lh.pl/zamowienie/order-pay/${response.data.number}/?key=${response.data.order_key}`;
+      console.log(response.data);
+      console.log(url);
+      window.open(url);
+    })
+    .catch((error) => {
+      console.log(error.response.data);
+    });
 
-api
-  .post("orders", data)
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
-    console.log(error.response.data);
-  });
+// @ts-ignore
+window.windowOrderCreator = createOrder;
+console.log("hello");

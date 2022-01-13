@@ -18,6 +18,7 @@ import InnerImageZoom from "react-inner-image-zoom";
 import { theme } from "../../styled/theme";
 import { useTranslation } from "react-i18next";
 import { ROUTES, ROUTING } from "../../services/routing";
+import { createOrder } from "../../services/api/client";
 
 const ProductPageNotConnected: React.FC<RouteComponentProps<
   null,
@@ -33,7 +34,7 @@ const ProductPageNotConnected: React.FC<RouteComponentProps<
   }, []);
 
   const product = getProduct();
-
+  const handleBuy = () => createOrder();
   if (!product) {
     <div>not found</div>;
   }
@@ -67,11 +68,7 @@ const ProductPageNotConnected: React.FC<RouteComponentProps<
           {/*<ProductPrice>*/}
           {/*  {t("shop.price")}: {product.price}zł*/}
           {/*</ProductPrice>*/}
-          <BuyButton
-            href="mailto:noroart.contact@gmail.com"
-          >
-            {t("shop.buyNow")}
-          </BuyButton>
+          <BuyButton onClick={handleBuy}>{t("shop.buyNow")}</BuyButton>
         </ProductInfo>
       </ProductDataWrap>
     </ProductPageWrapper>

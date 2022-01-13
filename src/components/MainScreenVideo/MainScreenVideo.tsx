@@ -49,7 +49,6 @@ export const MainScreenVideo = () => {
         alt="player-control"
       />
       <Video
-        muted
         onCanPlay={() => setPreLoading(false)}
         onClick={handleVideoClick}
         autoPlay

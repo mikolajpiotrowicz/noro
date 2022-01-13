@@ -1,1 +1,1 @@
-export const STATIC_FILE_BASE = "http://serwer72845.lh.pl/wp-content/uploads";
+export const STATIC_FILE_BASE = "https://noroart.pl/wp-content/uploads";

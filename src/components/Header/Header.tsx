@@ -80,9 +80,9 @@ export const HeaderNotConnected: React.FC<RouteComponentProps> = ({
         <DesktopMenuItem
           isActive={pathname === ROUTING[ROUTES.SHOP_ORIGINALS].path}
         >
-          <Link to={ROUTING[ROUTES.SHOP_ORIGINALS].path}>
+          <a href="https://noroart.pl/">
             {t("header.shop")}
-          </Link>
+          </a>
         </DesktopMenuItem>
         <DesktopMenuItem isActive={pathname === ROUTING[ROUTES.ABOUT].path}>
           <Link to={ROUTING[ROUTES.ABOUT].path}>{t("header.about")}</Link>
